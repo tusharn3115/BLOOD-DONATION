@@ -1,202 +1,590 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-    margin:0;
-    padding:0;
-    font-family: 'Poppins', sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-
-
-header{
-    display: flex   ;
-    background-color:rgba(255, 255, 255, 0.59);
-    height:90px;
-border-bottom: 1px solid rgb(164, 164, 164);
+html{
+  scroll-behavior: smooth;
+}
+header {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.59);
+  height: 90px;
+  border-bottom: 1px solid rgb(164, 164, 164);
 }
 
-
-header .logo{
-    height:110px;
+header .logo {
+  height: 110px;
 }
-header .logo h2{
-     display:flex;
-      margin-left:100px;
-      margin-top:-70px;     
+header .logo h2 {
+  display: flex;
+  margin-left: 100px;
+  margin-top: -70px;
 }
-header .logo h2 span{
-    color: red;
-}
-
-header .logo{
-    margin:0px 14px;
-    padding:0px 13px;
-    height: 120px;
-    width: 200px;
+header .logo h2 span {
+  color: red;
 }
 
+header .logo {
+  margin: 0px 14px;
+  padding: 0px 13px;
+  height: 120px;
+  width: 200px;
+}
 
-header .logo img{
- margin-top: -2%;
-    height:83%;
-    width:55%;
-}   
-header .list{
-    
-    margin-top: 2.5%;
-    margin-left: 50%;
+header .logo img {
+  margin-top: -2%;
+  height: 83%;
+  width: 55%;
+}
+header .list {
+  margin-top: 2.5%;
+  margin-left: 50%;
 }
 .list li {
-    margin-right:20px;
-    display:inline-block;
-    list-style: none;
+  margin-right: 20px;
+  display: inline-block;
+  list-style: none;
 }
-.list a{
-    font-weight: 550;
-    color:rgb(0, 0, 0);
-    margin:9px;
-    padding:3px;
-    margin-right:17px;
-    text-decoration: none;
-    /* text-transform: uppercase; */
-    font-size:15px;
+.list a {
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin: 9px;
+  padding: 3px;
+  margin-right: 17px;
+  text-decoration: none;
+  font-size: 17px;
 }
-.list a:hover{
-    color:rgb(203, 72, 72);
-    transition:0.2.5s ease;
-    
+.list a:hover {
+  color: rgb(203, 72, 72);
+  transition: 0.2.5s ease;
 }
 
-
-
-.mainDiv{
-    width: 100%;
-    margin-bottom: 5%;
-    display: flex;
+.mainDiv {
+  width: 100%;
+  margin-bottom: 5%;
+  display: flex;
 }
-.mainDiv .Img{
-    width:70%;
-    height:600px;
-background-color: red;
-    overflow: hidden;
+.mainDiv .Img {
+  width: 70%;
+  height: 600px;
+  background-color: red;
+  overflow: hidden;
 }
-.mainDiv .Img img{
-    width: 100%;
-height: 100%;
-} 
-.mainDiv .contacts{
+.mainDiv .Img img {
+  width: 100%;
+  height: 100%;
+}
+.mainDiv .contacts {
   padding-top: 5%;
-    width:45%;
-
+  width: 45%;
 }
-.mainDiv .contacts h1{
-    font-size: 35px;
-width: 75%;
-margin-top: 5%;
-margin-left: 10%;
+.mainDiv .contacts h1 {
+  font-size: 35px;
+  width: 75%;
+  margin-top: 5%;
+  margin-left: 10%;
 }
 
-.mainDiv .contacts .contact-details{
-margin-left: 10%;
-    width: 90%;
-    font-size: 26px;
+.mainDiv .contacts .contact-details {
+  margin-left: 10%;
+  width: 90%;
+  font-size: 26px;
 }
 /* .mainDiv .contacts h1{
     margin-top:-500px;
     margin-left:-105px;
     gap:1vw;
 } */
-.contact-details{
-       height:100px;
-       
-       width:200px;
+.contact-details {
+  height: 100px;
+  width: 200px;
 }
-.mainDiv .contacts .contact-details p{
+.mainDiv .contacts .contact-details p {
+  color: grey;
+  font-size: 17px;
+  margin-top: 20px;
+  padding: 7px;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-left: 12%;
+}
+
+.mainDiv .contacts .contact-button button {
+  background-color: rgb(203, 72, 72);
+  color: white;
+  margin-top: 30px;
+  height: 55px;
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+}
+
+.mainDiv .contacts .contact-button button:hover {
+  background-color: red;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.quote img {
+  margin-top: 7%;
+  height: 70px;
+  width: 80px;
+  display: block;
+}
+
+.quote-text {
+  text-align: center;   
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.quote-text {
+  display: flex;
+  justify-content: center;
+}
+.quote-text h3 i{
+      font-size:120%;
+}
+.main {
+  margin-left: 6%;
+  height: 50%;
+  width: 90%;
+  overflow: hidden;
+}
+.main h3 {
+  color: rgb(201, 24, 24);
+  margin-top: 14%;
+}
+.main h1 {
+  font-size: 44px;
+}
+.main1 {
+  width: 50%;
+}
+.main1 p{
+    padding-right: 1.3%;
+    color:grey;
+}
+.main2 {
+  height: 40%;
+  width: 85%;
+  margin-top: -10%;
+  margin-left: 50%;
+}
+.main2 img {
+  margin-right: 20%;
+  height:auto;
+  width: 70%;
+
+}
+
+.icon {
+  float: left;
+  height: 30%;
+  width: 20%;
+  margin-top:-28%;
+}
+.icon span {
+  color: black;
+}
+.icon h3 {
+  padding: 1.8%;
+  color: rgb(201, 24, 24);
+  font-size: medium;
+}
+.fa-solid fa-check {
+  display: inline;
+  color: solid rgb(243, 52, 52);
+}
+.icon2 {
+  float:left;
+  height: 35%;
+  width: 20%;
+  margin-top:-28%;
+  margin-left:27%;
+}
+.icon2 span {
+  color: black;
+}
+.icon2 h3 {
+  padding: 1.8%;
+  color: rgb(201, 24, 24);
+  font-size: medium;
+}
+.fa-solid {
+  font-size: 20px;
+  color: solid rgb(243, 52, 52);
+}
+.about{
+    height:10%;
+    width:12%;
+    margin-top:-9%;
+}  
+.about button{
+    cursor: pointer;
+    background-color: rgb(243, 52, 52);
+    color:white;
+    padding:10% 30%;
+    border-radius: 10px;
+    border:none;
+}
+.content{
+    margin-top:-0.43%;
+    height:800px;
+    width:100%;
+    background-color: rgb(190, 69, 69);
+}
+
+.content1{
+    background-color: white;
+    margin-left:6%;
+    height:18%;
+    width:35%;
+    
+}
+.content1 h1{
+    margin-left:8%;
+    padding:1.2%;
+
+}
+.content p{
+    margin-left:8%;
+     padding:1.2%;
+     color:rgb(84, 84, 84);
+}
+.content2{
+    float:right;
+    margin-top:-10%;
+    margin-right:32.32%;
+    height:18%;
+    width:24%;
+    padding:13px;
+}
+.content2 h2{
+
+    color:white;
+    margin-left:32%;
+}
+.content2 p{
+    color:white;
+    margin-left:30%;
+}
+.card{
+  height:60%;
+  width:100%;
+  position: relative;
+  display:flex;
+}
+
+.c1{
+    transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
+    background-color: white;
+    color:black;
+    margin:auto;
+    height:72%;
+    width:25%;
+}
+.c2{
+  transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
+  background-color: white;
+  margin:auto;
+  height:72%;
+  width:25%;
+}
+.c3{
+  transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
+  background-color: white;
+  margin:auto;
+  height:72%;
+  width:25%;
+}
+
+.c1 img{
+    opacity: 0.7;
+    margin:7% 35%;
+    height:24%;
+    width:30%;
+}
+
+.c2 img{
+  margin:7% 40%;
+  height:24%;
+  width:20%;
+}
+.c3 img{
+  margin:7% 42%;
+  height:25%;
+  width:23%;
+}
+.card h3{
+  font-size:x-large;
+  text-align: center;
+  padding:5%;
+   text-align: center;
+}
+.card p{
+  text-align: center;
+  margin: 0% 9%;
+}
+.card a{
+    color: rgb(190, 69, 69);
+    text-decoration: none;
+    text-align: center;
+    margin:2% 34%;
+}
+.c1:hover{
+  transform: translateY(-10px);
+}
+.c2:hover{
+  transform: translateY(-10px);
+}
+.c3:hover{
+  transform: translateY(-10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Us Page Css */
+.aboutUs-main{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+.aboutUs-main .aboutUs-img-main{
+    width:70%;
+    height:500px;
+    overflow: hidden;
+}
+
+.aboutUs-main .aboutUs-img-main img{
+    width: 100%;
+    height: 110%;
+} 
+
+.aboutUs-main .aboutUs-contacts{
+    padding-top: 5%;
+    width:45%;
+  
+}
+.aboutUs-main .aboutUs-contacts h1{
+  font-size: 35px;
+  width: 75%;
+  margin-top: 5%;
+  margin-left: 11%;
+}
+  
+.aboutUs-main .aboutUs-contacts .aboutUs-contact-details{
+    margin-left: 10%;
+    width: 90%;
+    font-size: 26px;
+}
+
+.aboutUs-contact-details{
+    height:100px;
+    width:200px;
+}
+.aboutUs-main .aboutUs-contacts .aboutUs-contact-details p{
+   color:grey;
+   font-size:17px;
+   margin-top:20px;
+   padding:7px;
+}
+
+.aboutUs-main .aboutUs-contacts .aboutUs-page{
     color:grey;
     font-size:17px;
     margin-top:20px;
     padding:7px;
+    margin-left: 10%;
 }
 
-.contact-button{
-   display: inline-block;
-
-margin-left: 12%;
-}
-.mainDiv .contacts .contact-button button{
-    background-color: rgb(203, 72, 72);
-    color: white;
-    margin-top: 30px;
-    height: 55px;
-    width: 130px;
-    border: none;
-    border-radius: 5px;
+.aboutUs-main .aboutUs-contacts .aboutUs-page p a{
+   text-decoration: none;
+   color:rgb(0, 0, 0);
 }
 
-.mainDiv .contacts .contact-button  button:hover{
-    background-color:red;
-    cursor: pointer;
-    transition:0.5s ease-in-out;
+.aboutUs-main .aboutUs-contacts .aboutUs-page span{
+    color: red;
 }
 
-.quote{
-
-    position: relative;
-display: flex;
-justify-content: center;
-}
-.quote img{
-    margin-top: 35px;
-    height:32px;
-    width:32px;
-    display: block;
-}
-.quote-text{
-    text-align: center;
-    margin-top:30px;
-    font-size: 25px;
+.aboutUs-container{
+    /* margin-top: 100px; */
+    height: 100%;
+    width: 70%;
 }
 
-.quote-text{
+.aboutUs-container .aboutUs-container-img{
+    width: 60%;
+    margin-left: 75%;
+    /* margin-bottom: 30%; */
     display: flex;
     justify-content: center;
 }
+    
+.aboutUs-container .aboutUs-container-img img{
+    width: 80%;
+    height:auto;
+}
 
-.about-us{
+.about1-us{
     margin-top: 150px;
  width: 100%;
 }
 
-.about-us h3{
+.about1-us h3{
+    display: inline-block;
     margin-left: 4%;
     color: rgb(203, 72, 72);
 }
 
-.about-us h1{
+.about1-us h1{
+    display: flex;
     margin-left: 4%;
     margin-top: 10px;
 }
 
 
 
-.about-us .about_container{
+.about1-us .about1_container{
     display: flex;  margin-bottom: 4%;
     margin-top: 3%;
 }
-.about-us .about_container .aboutus-details {
+.about1-us .about1_container .aboutus1-details {
     width: 50%;
 }
-.about-us .about_container .aboutus-details p{
+.about1-us .about1_container .aboutus1-details p{
+    color: rgb(91, 86, 86);
     margin-top: 20px;
     margin-left: 9%;
 }
 
-.about-us .about_container .aboutus-img{
-width: 50%;
+.about1-us .about1_container .aboutus1-img{
+width: 40%; 
 display: flex;
 justify-content: center;
 }
 
-.about-us .about_container .aboutus-img img{
+.about1-us .about1_container .aboutus1-img img{
+    margin-left: 14%;
   width: 80%;
-  height:auto;
+  margin-top: -40% ;
+  overflow: hidden;
+}
+
+.about1-us .about1_container .aboutus1-details p span{
+    color: rgb(203, 72, 72);
+    font-size: large;
+}
+
+
+/* our mission part css */
+.ourmission{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(237, 219, 219);
+} 
+
+ .ourmission-head{
+    width: auto;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+.ourmission-head h1{
+    font-weight: bolder;
+    display: inline-block;
+    font-size: 50px;
+    margin-left: 0;
+    margin-top: -10%;
+}
+
+.ourmission-head p{
+    font-size: large;
+    display: block;
+    text-align: center;
+    padding-top: 1%;
+    font-size: 20px;
+}
+
+ .ourmission-head{
+    padding-top: 7%;
+    padding-bottom: 4%;
+    text-align: center;
+}
+.out{
+    display:flex;
+    height: 100%;
+     width:100%;
+     text-align: center;
+     margin-bottom: 10%;
+}
+.out .bx{
+    margin-top: 15px;
+      font-size: 90px;
+}
+.out h5{
+    margin-top: 18px;
+     font-size: 20px;
+}
+.iicon1{
+    width:700px;
+    height:300px;
+    /* background-color:rgb(248, 231, 201); */
+    margin-left: 5%;
+}
+.iicon2{
+    width:700px;
+    height:300px;
+    margin-left: 12%;
+    /* background-color:rgb(255, 255, 255); */
+}
+.iicon3{
+    width:700px;
+    height:300px;
+    margin-left: 12%;
+    margin-right:7%;
+    /* background-color:rgb(255, 255, 255); */
+
 }
