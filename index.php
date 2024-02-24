@@ -5,26 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RED LIFE SAVER</title>
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="./userSideCss/style.css?v=1">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
     <body>
 
+
         <!--header section -->
         <header id="head">
             <div class="logo">
-                <img src="logo.png" alt>
+            
+            <img src='./userSideImg/logo.png' alt='logo img'>
+                 
+             
                 <h2><span>RED</span>lifesaver</h2>
             </div>
 
             <!-- nav bar -->
             <div class="list">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="/BloodDonationWebsite/index.php">Home</a></li>
+                    <li><a href="/BloodDonationWebsite/aboutUs.php">About Us</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="donateBlood.html">Donate</a></li>
+                    <li><a href="/BloodDonationWebsite/donateBlood.php">Donate</a></li>
                 </ul>
             </div>
         </header>
@@ -33,14 +38,16 @@
         <div class="mainDiv">
 
             <div class="Img">
-                <img src="pexels-frank-meriño-12193105.jpg" alt>
+                <img src="./userSideImg/pexels-frank-meriño-12193105.jpg" alt>
             </div>
 
             <div class="contacts">
                 <h1>Donate Your Blood to Us, Save More Life <br> Together </h1>
                 <div class="contact-details">
                     <p>
-                        "Join us in saving lives! Welcome to our blood donation website. Find donation centers, schedule appointments,<br>  and learn about our mission."</p>
+                        "Join us in saving lives! Welcome to our blood donation
+                        website. Find donation centers, schedule
+                        appointments,<br> and learn about our mission."</p>
                 </div>
                 <div class="contact-button">
                     <button>About Us</button>
@@ -50,7 +57,7 @@
 
         <!-- quote -->
         <div class="quote">
-            <img src="quoteImg-removebg-preview.png" alt>
+            <img src="./userSideImg/quoteImg-removebg-preview.png" alt>
         </div>
         <div class="quote-text">
             <h3><i>"A single drop of your blood could be a drop of life for someone else."</i></h3>
@@ -71,7 +78,7 @@
                 </p>
             </div>
             <div class="main2">
-                <img src="aboutus img.jpg" alt>
+                <img src="./userSideImg/aboutus img.jpg" alt>
             </div>
 
             <div class="icon">
@@ -109,25 +116,26 @@
             <div class="content2">
                 <h2>EXPERT STAFF</h2>
                 <p>
-                    Skilled team managing online blood donation platform with expertise.</p>
+                    Skilled team managing online blood donation platform with
+                    expertise.</p>
             </div>
             <div class="card">
                 <div class="c1">
-                    <img src="images.png" alt="png">
+                    <img src="./userSideImg/images.png" alt="png">
                     <h3>BLOOD DONATION</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Molestiae minima fuga a,</p>
                     <a href="#">LEARN MORE</a>
                 </div>
                 <div class="c2">
-                    <img src="hc.png" alt="png2">
+                    <img src="./userSideImg/hc.png" alt="png2">
                     <h3>HEALTH CHECK</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Molestiae minima fuga a, </p>
                     <a href="#">LEARN MORE</a>
                 </div>
                 <div class="c3">
-                    <img src="bb.png" alt="png3">
+                    <img src="./userSideImg/bb.png" alt="png3">
                     <h3>BLOOD BANK</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Molestiae minima fuga a,</p>
