@@ -669,7 +669,7 @@ overflow: hidden;
   text-align: left;
   width: 50%;
   height: 610px;
-  margin-top: 5%;
+  margin-top: 1%;
   margin-left: 25%;
   padding-left: 30px;
 }
@@ -700,6 +700,7 @@ overflow: hidden;
   padding: 2%;
   margin-top: 5%;
   margin-left: 2%;
+  resize: none;
 }
 
 .donationForm2 button{
@@ -711,7 +712,7 @@ overflow: hidden;
   font-weight: bolder;
   border: none;
   /* border-radius: 6px; */
-}
+} 
 
 .donationForm2 button {
   padding: 18px 36px;

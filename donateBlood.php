@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>DONATE BLOOD</title>
-    <link rel="stylesheet" href="./userSideCss/style.css?v=3">
+    <link rel="stylesheet" href="./userSideCss/style.css?v=4">
+
+    <script>
+        // prevent reload post request
+        if (window.history.replaceState) {
+             window.history.replaceState(null, null, window.location.href)
+        }
+    </script>
+
 </head>
 
 <body>
@@ -69,10 +78,10 @@
     <div class="fullForm">
         <div class="donationForm1">
             <h1>Blood Type</h1>
-            <form action="" method="POST">
+            <form action="donateBlood.php" method="POST">
                 <br><br>
-                <select name="bloodType" id="" required>
-                    <option value="type">Select your blood type</option>
+                <select name="bloodgroup" >
+                    <option value="default">Select your blood type</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
                     <option value="B+">B+</option>
@@ -82,7 +91,6 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
-            </form>
         </div>
 
 
@@ -90,13 +98,12 @@
 
         <div class="donationForm2">
             <h1>Details</h1>
-            <form action="" method="POST">
-                <input type="text" name="fname" id placeholder="First Name" required>
-                <input type="text" name="lname" id placeholder="Second Name" required>
-                <input type="email" name="email" id placeholder="Email" required>
-                <input type="text" name="address" id placeholder="Address" required>
-                <textarea name="casedes" id cols="90" rows="10" placeholder="Case Description..." required></textarea>
-                <button name="donate">Donate Now</button>
+                <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
+                <input type="text" name="lname" id placeholder="Second Name" autocomplete="off" required>
+                <input type="email" name="email" id placeholder="Email" autocomplete="off" required>
+                <input type="text" name="address" id placeholder="Address" autocomplete="off" required>
+                <textarea name="case" id cols="90" rows="10" placeholder="Case Description..." required></textarea>
+                <button name="submit">Donate Now</button>
             </form>
         </div>
     </div>
@@ -104,75 +111,32 @@
 
 </html>
 
-
-
-
-
-
-
-
-
-
 <!-- establishing connection with database -->
 
 <?php
-
-
 // connection file included
-include 'connection.php';
+include ('connection.php');
+
+if (isset($_REQUEST['submit'])) {
+
+    $bloodgroup = $_REQUEST['bloodgroup'];
+    $fname = $_REQUEST['fname'];
+    $lname = $_REQUEST['lname'];
+    $email = $_REQUEST['email'];
+    $address = $_REQUEST['address'];
+    $case = $_REQUEST['case'];
 
 
+    $insert_query = mysqli_query($con,"insert into dontformdata set type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',address='$address',description='$case'");
 
-// inserting form data when the donate button is pressed
-
-if (isset($_POST['donate'])) {
-
-
-    $BloodType = $_POST['bloodType'];
-    $FirstName = $_POST['fname'];
-    $LastName = $_POST['lname'];
-    $Email = $_POST['email'];
-    $Address = $_POST['address'];
-    $Desc = $_POST['casedes'];
-
-
-
-
-    // insert query of sql to insert form data into database
-
-    $insertquery = " insert into dontformdata(BloodType,FirstName,LastName,Email,Address,CaseDes) values ('$BloodType','$FirstName','$LastName','$Email','$Address','$Desc') ";
-
-
-
-
-    // printing the result that if the data is stored or not
-    $result = $mysqli_query($con, $insertquery);
-
-    if ($result) {
-?>
-
-
-        <!-- script tag for an alert if the data is stored or not -->
-        <script>
-            alert("Your data was stored successfully. Thankyou for being a donor :) .");
-        </script>
-
-
-    <?php
-
-
-    } else {
-    ?>
-
-        <script>
-            alert("There was an error while storing your data, please try again later :( .");
-        </script>
-
-<?php
+    if($insert_query>0){
+        echo "data inserted successfully";
     }
+    else{
+        echo "Error";
+    }
+
+
 }
-
-
-
 
 ?>
