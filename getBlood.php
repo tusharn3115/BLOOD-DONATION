@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=5">
+    <link rel="stylesheet" href="./userSideCss/style.css?v=8">
 </head>
 <body>
     
-<h2>Blood Stock Availability</h2>
+
+        <!--header section -->
+        <header id="head">
+            <div class="logo">
+            
+            <img src='./userSideImg/logo.png' alt='logo img'>
+                 
+             
+                <h2><span>RED</span>lifesaver</h2>
+            </div>
+
+            <!-- nav bar -->
+            <div class="list">
+                <ul>
+                    <li><a href="/BloodDonationWebsite/index.php">Home</a></li>
+                    <li><a href="/BloodDonationWebsite/aboutUs.php">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/BloodDonationWebsite/donateBlood.php">Donate</a></li>
+                </ul>
+            </div>
+        </header>
+
+<section class="register">
+<h1>Blood Stock Availability</h1>
+<hr>
+<br>
+<h3>Search Blood Stock</h3>
 <div class="searchBlood">
     <form action="">
     <select name="selectBlood" >
@@ -22,13 +48,27 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
     </select>
-    <br><br>
+   
 
-    <textarea name="why" id="" cols="40" rows="5" placeholder="Why you need blood(description...)"></textarea>
-    <br><br>
+    <select name="sectors" id="">
+        <option value="">Select sectors</option>
+        <option value="sectors">Sector - 22</option>
+        <option value="sectors">Sector - 32</option>
+        <option value="sectors">Sector - 43</option>
+        <option value="sectors">Sector - 17</option>
+        <option value="sectors">Sector - 41</option>
+        <option value="sectors">Sector - 26</option>
+        <option value="sectors">Sector - 29</option>
+    </select>
 
+    <select name="district" id="">
+        <option value="">Select district</option>
+        <option value="">Chandigarh</option>
+    </select>
+<br>
     <button>Search</button>
     </form>
 </div>
+</section>
 </body>
 </html>
