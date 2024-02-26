@@ -26,8 +26,7 @@
 
     <textarea name="why" id="" cols="40" rows="5" placeholder="Why you need blood(description...)"></textarea>
     <br><br>
-    Upload your blood report : <input type="file" name="fileupload" id="">
-    <br><br>
+
     <button>Search</button>
     </form>
 </div>

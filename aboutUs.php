@@ -12,7 +12,7 @@
     <body>
 
 
-        <!--header section -->
+        <!--header section -->  
         <header id="head">
             <div class="logo">
                 <img src="./userSideImg/logo.png" alt>

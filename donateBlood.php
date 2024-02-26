@@ -102,7 +102,7 @@
                 <input type="text" name="lname" id placeholder="Second Name" autocomplete="off" required>
                 <input type="email" name="email" id placeholder="Email" autocomplete="off" required>
                 <input type="text" name="address" id placeholder="Address" autocomplete="off" required>
-                <textarea name="case" id cols="90" rows="10" placeholder="Case Description..." required></textarea>
+                <textarea name="case" id cols="90" rows="10" placeholder="Health Description Of Past 7 Days..." required></textarea>
                 <button name="submit">Donate Now</button>
             </form>
         </div>
@@ -115,7 +115,7 @@
 
 <?php
 // connection file included
-include ('connection.php');
+require ('connection.php');
 
 if (isset($_REQUEST['submit'])) {
 
