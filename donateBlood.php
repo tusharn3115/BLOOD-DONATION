@@ -126,6 +126,13 @@
 
 </html>
 
+
+
+
+
+
+
+
 <!-- establishing connection with database -->
 
 <?php

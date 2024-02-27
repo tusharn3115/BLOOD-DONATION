@@ -745,10 +745,10 @@ header .list {
 
 .donationForm2 input {
   margin-top: 6%;
-  width: 35%;
+  width: 39.5%;
   padding: 2%;
   display: inline;
-  margin: 3%;
+  margin: 2.5%;
   margin-bottom: 1%;
 }
 
@@ -799,9 +799,9 @@ header .list {
 /* select tag */
 .donationForm2 select#district{
   margin-top: 2.5%;
-  width: 77%;
+  width: 84.5%;
   padding: 2%;
-  margin-left: 3%;
+  margin-left: 2.5%;
 }
 
 
