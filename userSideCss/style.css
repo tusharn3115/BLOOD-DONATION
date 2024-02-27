@@ -728,7 +728,7 @@ header .list {
   border: 1px solid grey;
   text-align: left;
   width: 50%;
-  height: 610px;
+  height: 890px;
   margin-top: 1%;
   margin-left: 25%;
   padding-left: 30px;
@@ -756,6 +756,20 @@ header .list {
   border: 1px solid rgb(218, 45, 45);
 } */
 
+/* phone number validation */
+.donationForm2 #phone {
+  outline: 0;
+
+}
+
+.donationForm2 #phone:valid {
+  border-color: green;
+}
+
+.donationForm2 #phone:focus:invalid {
+  border-color: red;
+}
+
 .donationForm2 textarea {
   display: flex;
   padding: 2%;
@@ -764,15 +778,44 @@ header .list {
   resize: none;
 }
 
+
+/* pincode validation */
+.donationForm2 #pincode {
+  outline: 0;
+
+}
+
+.donationForm2 #pincode:valid {
+  border-color: green;
+}
+
+.donationForm2 #pincode:focus:invalid {
+  border-color: red;
+}
+
+
+
+
+/* select tag */
+.donationForm2 select#district{
+  margin-top: 2.5%;
+  width: 77%;
+  padding: 2%;
+  margin-left: 3%;
+}
+
+
+
+
+/* button */
 .donationForm2 button {
-  margin-top: 3.5%;
-  margin-left: 2%;
+  margin-top: 7%;
+  margin-left: 35%;
   padding: 2%;
   background-color: rgb(218, 45, 45);
   color: white;
   font-weight: bolder;
   border: none;
-  /* border-radius: 6px; */
 }
 
 .donationForm2 button {
@@ -789,58 +832,4 @@ header .list {
 
 .donationForm2 button:hover {
   box-shadow: inset 0 0 0 50px #000000;
-}
-
-
-.register{
-height:100%;
-display:block;
-margin-top:5%;
-  margin-left: 0%;
-  /* background-color: red; */
-}
-
-.register h1{
-  margin-bottom: 1%;
-  color: rgb(157, 52, 52);
-}
-
-.register{
-  margin-left: 13%;
-  margin-right: 15%;
-}
-
-.register h3{
-  color: white;
-  font-size: 15px;
-  padding: 1%;
-  background-color: rgb(157, 52, 52);
-}
-
-.register .searchBlood {
-  border: 1px solid rgb(157, 52, 52);
-  /* display:contents; */
-}
-
-.register .searchBlood form{
-  padding: 2%;
-}
-
-.register .searchBlood select{
-  width: 25%;
-  font-size: 15px;
-  padding: 0.5%;
-  /* margin-left: 5%; */
-}
-
-.register .searchBlood button{
-  font-size: 15px;
-  width: 10%;
-  padding: 0.3%;
-  color: white;
-  background-color: rgb(157, 52, 52);
-  border: none;
-  margin-top: 3%;
-  margin-left: 40%;
-  cursor: pointer;
 }

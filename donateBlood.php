@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>DONATE BLOOD</title>
-    <link rel="stylesheet" href="./userSideCss/style.css?v=4">
+    <link rel="stylesheet" href="./userSideCss/style.css?v=5">
 
     <script>
         // prevent reload post request
         if (window.history.replaceState) {
-             window.history.replaceState(null, null, window.location.href)
+            window.history.replaceState(null, null, window.location.href)
         }
     </script>
 
@@ -80,7 +80,7 @@
             <h1>Blood Type</h1>
             <form action="donateBlood.php" method="POST">
                 <br><br>
-                <select name="bloodgroup" >
+                <select name="bloodgroup">
                     <option value="default">Select your blood type</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -97,13 +97,28 @@
 
 
         <div class="donationForm2">
-            <h1>Details</h1>
-                <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
-                <input type="text" name="lname" id placeholder="Second Name" autocomplete="off" required>
-                <input type="email" name="email" id placeholder="Email" autocomplete="off" required>
-                <input type="text" name="address" id placeholder="Address" autocomplete="off" required>
-                <textarea name="case" id cols="90" rows="10" placeholder="Health Description Of Past 7 Days..." required></textarea>
-                <button name="submit">Donate Now</button>
+            <h1>Personal Details</h1>
+            <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
+            <input type="text" name="lname" id placeholder="Second Name" autocomplete="off" required>
+            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="off" required pattern="[0-9]{10}">
+            <textarea name="case" id cols="90" rows="10" placeholder="Health Description Of Past 7 Days..." required></textarea>
+            <br>
+
+
+            <h1>Address</h1>
+            <input type="text" name="address" id="address" placeholder="Address" required>
+            <input type="text" name="pincode" id="pincode" required placeholder="Enter pincode" inputmode="numeric" pattern="[0-9]{6}">
+
+
+            <select name="district" id="district">
+                <option value="default">Select your district</option>
+                <option value="panchkula">Panchkula</option>
+                <option value="chandigarh">Chandigarh</option>
+            </select>
+
+
+            <button name="submit">Donate Now</button>
             </form>
         </div>
     </div>
@@ -115,7 +130,7 @@
 
 <?php
 // connection file included
-require ('connection.php');
+require('connection.php');
 
 if (isset($_REQUEST['submit'])) {
 
@@ -123,20 +138,20 @@ if (isset($_REQUEST['submit'])) {
     $fname = $_REQUEST['fname'];
     $lname = $_REQUEST['lname'];
     $email = $_REQUEST['email'];
-    $address = $_REQUEST['address'];
+    $phone = $_REQUEST['phone'];
     $case = $_REQUEST['case'];
+    $address = $_REQUEST['address'];
+    $pincode = $_REQUEST['pincode'];
+    $district = $_REQUEST['district'];
 
 
-    $insert_query = mysqli_query($con,"insert into dontformdata set type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',address='$address',description='$case'");
+    $insert_query = mysqli_query($con, "insert into dontformdata set type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
 
-    if($insert_query>0){
+    if ($insert_query > 0) {
         echo "data inserted successfully";
-    }
-    else{
+    } else {
         echo "Error";
     }
-
-
 }
 
 ?>

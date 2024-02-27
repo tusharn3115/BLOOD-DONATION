@@ -1,32 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-h2{
-    color: rgb(218, 45, 45);
-}
-
-.searchBlood{
-    height: 100%;
-    width: 100%;
-}
-
-.searchBlood select{
-    width: 25%;
-    padding: 5px;
-}
-
-.searchBlood input{
-    margin-left: 1%;
-}
-
-.searchBlood textarea{
-    padding: 2%;
-    margin-top: 1%;
-    margin-left: 0;
-    resize: none;
-}
-
-
-.searchBlood button{
-    width: 5%;
-    padding: 5px;
-}
+.register{
+    height:100%;
+    display:block;
+    margin-top:5%;
+      margin-left: 0%;
+      /* background-color: red; */
+    }
+    
+    .register h1{
+      margin-bottom: 1%;
+      color: rgb(157, 52, 52);
+    }
+    
+    .register{
+      margin-left: 13%;
+      margin-right: 15%;
+    }
+    
+    .register h3{
+      color: white;
+      font-size: 15px;
+      padding: 1%;
+      background-color: rgb(157, 52, 52);
+    }
+    
+    .register .searchBlood {
+      border: 1px solid rgb(157, 52, 52);
+      /* display:contents; */
+    }
+    
+    .register .searchBlood form{
+      padding: 2%;
+    }
+    
+    .register .searchBlood select{
+      width: 25%;
+      font-size: 15px;
+      padding: 0.5%;
+      /* margin-left: 5%; */
+    }
+    
+    .register .searchBlood button{
+      font-size: 15px;
+      width: 10%;
+      padding: 0.5%;
+      color: white;
+      background-color: rgb(157, 52, 52);
+      border: none;
+      margin-top: 3%;
+      margin-left: 43%;
+      cursor: pointer;
+      border-radius: 1rem;
+    }

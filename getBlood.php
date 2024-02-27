@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./userSideCss/style.css?v=8">
+    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=9">
 </head>
 <body>
     
@@ -34,8 +35,8 @@
 <h1>Blood Stock Availability</h1>
 <hr>
 <br>
-<h3>Search Blood Stock</h3>
 <div class="searchBlood">
+<h3>Search Blood Stock</h3>
     <form action="">
     <select name="selectBlood" >
                     <option value="default">Select for blood type</option>
