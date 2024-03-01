@@ -496,6 +496,7 @@ header .list {
 .about1-us {
   margin-top: 150px;
   width: 100%;
+  margin-bottom: 10%;
 }
 
 .about1-us h3 {
@@ -514,7 +515,7 @@ header .list {
 
 .about1-us .about1_container {
   display: flex;
-  margin-bottom: 4%;
+  margin-bottom: 7%;
   margin-top: 3%;
 }
 
