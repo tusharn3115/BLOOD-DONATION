@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./userSideCss/style.css?v=8">
-    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=9">
+    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=11">
 </head>
 <body>
     
@@ -31,6 +31,23 @@
             </div>
         </header>
 
+
+    <div class="donationImg1">
+        <div class="black"></div>
+        <h2>Schedule your blood test today</h2>
+        <h4><button>Blood Test</button></h4>
+        <img src="./userSideImg/getblood.jpg" alt="error">
+    </div>
+
+    <div class="FormHeading1">
+        <h1>Search for donor</h1>
+    </div>
+
+
+
+
+
+        <!-- MAIN SECTION -->
 <section class="register">
 <h1>Blood Stock Availability</h1>
 <hr>
@@ -65,11 +82,15 @@
     <select name="district" id="">
         <option value="">Select district</option>
         <option value="">Chandigarh</option>
+        <option value="">Panchkula</option>
     </select>
-<br>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <br>
     <button>Search</button>
     </form>
 </div>
 </section>
+
 </body>
 </html>
