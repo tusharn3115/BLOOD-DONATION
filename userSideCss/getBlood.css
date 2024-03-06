@@ -103,6 +103,9 @@
     
     .register .searchBlood select{
       width: 25%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      margin-left: 5%;
       font-size: 15px;
       padding: 0.5%;
       /* margin-left: 5%; */
@@ -119,4 +122,11 @@
       margin-left: 43%;
       cursor: pointer;
       border-radius: 1rem;
+    }
+
+    .register .searchBlood textarea{
+      padding: 2%;
+      margin-top:2%;
+      margin-left: 7%;
+      resize: none;
     }

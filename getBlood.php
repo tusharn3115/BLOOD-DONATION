@@ -85,7 +85,7 @@
         <option value="">Panchkula</option>
     </select>
 
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea name="" id="" cols="126" rows="10" placeholder="Description for blood need purpose..." required></textarea>
     <br>
     <button>Search</button>
     </form>

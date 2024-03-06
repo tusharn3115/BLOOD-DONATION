@@ -773,10 +773,10 @@ header .list {
 
 .donationForm2 textarea {
   display: flex;
-  padding: 2%;
-  margin-top: 5%;
-  margin-left: 2%;
-  resize: none;
+    padding: 2%;
+    margin-top: 5%;
+    margin-left: 2%;
+    resize: none;
 }
 
 
