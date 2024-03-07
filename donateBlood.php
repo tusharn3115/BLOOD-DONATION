@@ -123,7 +123,6 @@
         </div>
     </div>
 </body>
-
 </html>
 
 
@@ -155,10 +154,19 @@ if (isset($_REQUEST['submit'])) {
     $insert_query = mysqli_query($con, "insert into dontformdata set type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
 
     if ($insert_query > 0) {
-        echo "data inserted successfully";
+        ?>
+<script>
+
+alert("Registration Successful");
+window.location.replace("sendMail.php");
+
+</script>
+
+<?php
     } else {
         echo "Error";
     }
 }
+
 
 ?>

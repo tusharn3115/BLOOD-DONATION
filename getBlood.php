@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./userSideCss/style.css?v=8">
-    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=11">
+    <link rel="stylesheet" href="./userSideCss/getBlood.css?v=12">
 </head>
 <body>
     
@@ -35,8 +35,8 @@
     <div class="donationImg1">
         <div class="black"></div>
         <h2>Schedule your blood test today</h2>
-        <h4><button>Blood Test</button></h4>
-        <img src="./userSideImg/getblood.jpg" alt="error">
+        <h4><a href="./bloodTest.html"><button>Blood Test</button></a></h4>
+        <img src="./userSideImg/bloodTest.jpg" alt="error">
     </div>
 
     <div class="FormHeading1">
