@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+
+  .adminLogin{
+    height: 100%;
+    width: 100%;
+  }
+
+  .adminLogin form{
+    margin-top: 15%;
+    text-align: center;
+  }
+
+  .adminLogin form h1{
+    width: 30%;
+    font-size: 45px;
+    margin: 1.5%;
+    margin-left: 35%;
+    color: rgb(94, 10, 10);
+  }
+
+  .adminLogin form input{
+    margin: 0.5%;
+    width: 20%;
+    padding: 0.4%;
+    font-size: 15px;
+  }
+
+  .adminLogin form button{
+    margin: 1%;
+    width: 6%;
+    padding: 0.3%;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .adminLogin form button:hover{
+    background-color:rgb(0, 0, 0);
+    color: white;
+    transition: ease-in-out 0.2s;
+  }
