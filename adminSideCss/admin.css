@@ -47,3 +47,20 @@
     color: white;
     transition: ease-in-out 0.2s;
   }
+
+
+
+
+
+
+  .left-container{
+    background-color: rgb(90, 12, 12);
+    width: 16.5%;
+    height: 695px;
+  }
+
+  .adminNav a{
+    text-decoration: none;
+    color: white;
+    margin: 4%;
+  }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
   <title>ADMIN LOGIN</title>
-  <link rel="stylesheet" href="../userSideCss/admin.css?v=2">
+  <link rel="stylesheet" href="../adminSideCss/admin.css?v=2">
 
   <script>
         // prevent reload post request
@@ -24,10 +24,10 @@
 
   <h1>Admin Login</h1>
 
-  <input type="email" name="adminEmail" id="" placeholder="Admin Email...">
+  <input type="email" name="adminEmail" id="" placeholder="Admin Email..." autocomplete="off">
   <br>
 
-  <input type="password" name="adminPass" id="" placeholder="Admin Password...">
+  <input type="password" name="adminPass" id="" placeholder="Admin Password..." autocomplete="off">
   <br>
 
   <button name="login">Log-in</button>
@@ -49,7 +49,9 @@ if(isset($_POST['login'])){
   $result = mysqli_query($conn,$query);
   if(mysqli_num_rows($result)==1)
   {
-    echo "Correct";
+    session_start();
+    $_SESSION['adminLoginId'] = $_POST['adminEmail'];
+    header("location: adminpanel.php");
   }
   else{
     echo "<script>alert('Incorrect password');</script>";

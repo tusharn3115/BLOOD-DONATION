@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Registration Form | CodingLab </title>
+    <title>Blood Test Registration Form</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -17,7 +17,8 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #4c0613, #a20636);
+  /* background-color: (#510312); */
+  background-color: #510312;
 }
 .container{
   max-width: 700px;
@@ -25,7 +26,7 @@ body{
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .container .title{
   font-size: 25px;
@@ -109,6 +110,11 @@ form .input-box span.details{
    height: 45px;
    margin: 35px 0
  }
+ form textarea{
+  resize: none;
+  height: 105%;
+  padding: 2%;
+ }
  
  form select{
   height: 45px;
@@ -123,57 +129,40 @@ form .input-box span.details{
  }
  form .button input{
    height: 100%;
-   width: 100%;
+   width: 30%;
+   margin-top: 2%;
+   margin-left: 35%;
    border-radius: 5px;
    border: none;
-   color: #fff;
+   color: #ffffff;
    font-size: 18px;
    font-weight: 500;
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #4c0613, #a20636);
- }
- form .button input:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #4c0613, #a20636);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
-}
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  form .category{
-    width: 100%;
-  }
-  .content form .user-details{
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-  .user-details::-webkit-scrollbar{
-    width: 5px;
-  }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
-  }
+   background-color: #510312;
 }
   </style>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script>
+        // prevent reload post request
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href)
+        }
+    </script>
    </head>
 <body>
+
+
   <div class="container">
     <div class="title">SCHEDULE YOUR BLOOD TEST</div>
     <div class="content">
-      <form action="appointment.php" method="post">
+
+      <form action="bloodTest.php" method="POST">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name= "name" required/>
+            <input type="text" placeholder="Enter your name" name= "name" autocomplete="off" required/>
           </div>
          
 
@@ -181,7 +170,7 @@ form .user-details .input-box{
          
           <div class="input-box">
             <span class="details">Selected your blood test</span>
-<select name="doctor">
+<select name="bloodTest">
               <option>Full Blood Test</option>
             
 
@@ -190,15 +179,15 @@ form .user-details .input-box{
 
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" name="email" required>
+            <input type="text" placeholder="Enter your email" name="email" autocomplete="off" required>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" name="phone" required>
+            <input type="text" placeholder="Enter your number" name="phone" autocomplete="off" required>
           </div>
           <div class="input-box">
             <span class="details">Appointment Date</span>
-            <input type="date" placeholder="select date" name="date" required>
+            <input type="date" placeholder="select date" name="date" autocomplete="off" required>
           </div>
           <div class="input-box">
             <span class="details">Message</span>
@@ -226,7 +215,7 @@ form .user-details .input-box{
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="BOOK NOW">
+          <input type="submit" value="BOOK NOW" name="submit">
         </div>
       </form>
     </div>
@@ -234,3 +223,35 @@ form .user-details .input-box{
 
 </body>
 </html>
+
+
+<?php
+include('connection.php');
+
+if(isset($_REQUEST['submit'])){
+
+  $Fname = $_REQUEST['name'];
+  $Blood = $_REQUEST['bloodTest'];
+  $Email = $_REQUEST['email'];
+  $phoneNo = $_REQUEST['phone'];
+  $date = $_REQUEST['date'];
+  $message = $_REQUEST('message');
+  $gender = $_REQUEST['gender'];
+
+  $insert_query = mysqli_query($conn,"insert into blood_test_form set fname='$Fname',blood='$Blood',email='$Email',phoneNo='$phoneNo',date='$date',message='$message',gender='$gender'");
+
+  if ($insert_query > 0) {
+    ?>
+<script>
+
+alert("Appointment Booked Successful");
+window.location.replace("getBlood.php");
+
+</script>
+
+<?php
+} else {
+    echo "Error";
+}
+}
+?>

@@ -1,5 +1,5 @@
 <?php
-$to_email = "cognitivecorner2@gmail.com";
+$to_email = "manindersingh1991chd@gmail.com";
 $subject = " Confirmation: Blood Donation Registration Successful";
 $body = "Dear Donor,
 
@@ -15,7 +15,7 @@ Once again, thank you for your compassion and willingness to give back to the co
 
 Best regards,
 
-REDlifesaver Team";
+Team REDlifesaver";
 $headers = "From: Team REDlifesaver";
 
 if (mail($to_email, $subject, $body, $headers)) {
