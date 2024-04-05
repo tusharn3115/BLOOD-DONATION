@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>DONATE BLOOD</title>
-    <link rel="stylesheet" href="./userSideCss/style.css?v=5">
+    <link rel="stylesheet" href="./userSideCss/style.css?v=6">
 
     <script>
         // prevent reload post request
@@ -99,10 +99,10 @@
         <div class="donationForm2">
             <h1>Personal Details</h1>
             <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
-            <input type="text" name="lname" id placeholder="Second Name" autocomplete="off" required>
+            <input type="text" name="lname" id placeholder="Last Name" autocomplete="off" required>
             <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
             <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="off" required pattern="[0-9]{10}">
-            <textarea name="case" id cols="90" rows="10" placeholder="Health Description Of Past 7 Days..." required></textarea>
+            <textarea name="case" id cols="90" rows="10" placeholder="Health Description or any Disease..." required></textarea>
             <br>
 
 
@@ -139,7 +139,9 @@
 require('connection.php');
 
 if (isset($_REQUEST['submit'])) {
-
+    date_default_timezone_set("Asia/Calcutta"); 
+    $Date=date("Y/m/d");
+$time=date('H:i:s');
     $bloodgroup = $_REQUEST['bloodgroup'];
     $fname = $_REQUEST['fname'];
     $lname = $_REQUEST['lname'];
@@ -151,18 +153,76 @@ if (isset($_REQUEST['submit'])) {
     $district = $_REQUEST['district'];
 
 
-    $insert_query = mysqli_query($con, "insert into dontformdata set type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
+    $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
 
     if ($insert_query > 0) {
-        ?>
-<script>
+        
+ 
 
-alert("Registration Successful");
-window.location.replace("sendMail.php");
 
-</script>
 
-<?php
+
+
+
+
+        $to = "$email";
+        $subject = "Confirmation: Blood Donation Registration Successful";
+        $message = "
+        <html>
+            <head>
+                <title>Confirmation: Blood Donation Registration </title>
+            </head>
+        
+            <body>
+                <div>
+              
+                Dear Donor,<br><br>
+        
+                We hope this mail finds you well.<br>
+                
+                I am writing to inform you that your registration for blood donation has been successfully processed. Your commitment to contributing to our community's health and well-being through this act of kindness is truly commendable.<br><br>
+                
+                Your willingness to donate blood is invaluable, as it plays a vital role in saving lives and supporting those in need during critical times. Your generosity will undoubtedly make a significant difference in the lives of many individuals.<br><br>
+                
+                We will be in touch with further details regarding the donation process, including scheduling and location, closer to the donation date. In the meantime, if you have any questions or require additional information, please do not hesitate to contact us.<br><br>
+                
+                Once again, thank you for your compassion and willingness to give back to the community. Your donation will undoubtedly leave a lasting impact, and we are truly grateful for your support.<br>
+                <br>
+                Best regards,
+                <br>
+                Team REDlifesaver.
+        
+            
+            </body>
+        </html>
+        ";
+        // Always set content-type when sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
+        $headers .= 'From: negitushar81@gmail.com' . "\r\n";
+        
+        
+        $result = mail($to, $subject, $message, $headers);
+        
+        
+        
+        
+        
+        
+        if ($result == true) {
+            ?>
+            <script>
+            alert('Record Successfully Deleted');
+            </script>
+
+            <?php
+
+            header('Location: /BloodDonationWebsite');
+        }
+        
+        
+        
+
     } else {
         echo "Error";
     }

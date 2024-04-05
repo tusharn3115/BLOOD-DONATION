@@ -35,7 +35,7 @@
     <div class="donationImg1">
         <div class="black"></div>
         <h2>Schedule your blood test today</h2>
-        <h4><a href="./bloodTest.php"><button>Blood Test</button></a></h4>
+        <!-- <h4><a href="./bloodTest.php"><button>Blood Test</button></a></h4> -->
         <img src="./userSideImg/bloodTest.jpg" alt="error">
     </div>
 
@@ -69,14 +69,10 @@
    
 
     <select name="sectors" id="">
-        <option value="">Select sectors</option>
-        <option value="sectors">Sector - 22</option>
-        <option value="sectors">Sector - 32</option>
-        <option value="sectors">Sector - 43</option>
-        <option value="sectors">Sector - 17</option>
-        <option value="sectors">Sector - 41</option>
-        <option value="sectors">Sector - 26</option>
-        <option value="sectors">Sector - 29</option>
+        <option value="">Gender</option>
+        <option value="sectors">Male</option>
+        <option value="sectors">Female</option>
+        <option value="sectors">Others</option>
     </select>
 
     <select name="district" id="">

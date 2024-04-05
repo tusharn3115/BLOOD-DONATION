@@ -90,9 +90,6 @@ if(isset($_POST['logout'])){
     font-size: 1.5rem;
     padding-right: 1rem;
 }
-
-
-
 #nav-toggle:checked + .sidebar{
     width: 70px;
 }
@@ -478,7 +475,7 @@ tr td:last-child{
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
-                Dashboard
+                Donors
             </h2>
 
 
@@ -494,26 +491,26 @@ tr td:last-child{
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>45</h1>
-                        <span>Total Donors</span>
+                        <h1>A+</h1>
+                        <span>25</span>
                     </div>
                     <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
-                <div class="card-single">
-                    <div>
-                        <h1>105</h1>
-                        <span>Total Registrations</span>
-                    </div>
-                    <div>
-                        <span class="las la-clipboard"></span>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
                     </div>
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1>85</h1>
-                        <span>Total Blood Unit(in ml)</span>
+                        <h1>A-</h1>
+                        <span>9</span>
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>B+</h1>
+                        <span>15</span>
                     </div>
                     <div>
                     <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
@@ -524,73 +521,64 @@ tr td:last-child{
                 <div class="card-single">
                     <div>
                         <h1>
-                            <font color=black>35
+                            <font color=black>B-
                         </h1>
                         </font>
                         <span>
-                            <font color=grey>Total Request
+                            <font color=grey>5
                         </span>
                     </div>
                     <div>
-                        <span class="lab la-google-wallet"></span>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
                     </div>
                 </div>
             </div>
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Recent Registrations</h3>
-                            <form action="./registration.php">
-                            <button style="cursor: pointer;">See all <span class="las la-aroow-right"></span></button>
-                            </form>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Address</td>
-                                            <td>Blood Type</td>
-                                            <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        include("adminConnection.php");
-                                        $query = "SELECT * FROM dontformdata ORDER BY insert_date desc,insert_time desc LIMIT 5";
-                                        $query_run = mysqli_query($conn, $query);
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1 style="color: black;">AB+</h1>
+                        <span>8</span>
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1 style="color: black;">AB-</h1>
+                        <span>4</span>
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1 style="color: black;">O+</h1>
+                        <span>19</span>
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
 
-                                        if (mysqli_num_rows($query_run) > 0) {
-                                            foreach ($query_run as $row) {
-                                                // echo $row['firstname'];
-                                        ?>
-                                                <tr>
-                                                    <td><?php echo $row['firstname']; ?></td>
-                                                    <td><?php echo $row['district']; ?></td>
-                                                    <td><?php echo $row['type']; ?></td>
-                                                    <td><?php echo $row['description']; ?></td>  
-                                                </tr>
-                                            <?php
-                                            }
-                                        } else {
-                                            ?>
-                                            <tr>
-                                                <td>No record found</td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1 style="color: black;">
+                            O-
+                        </h1>
+                        
+                        <span>
+                            <font color=grey>10
+                        </span>
+                    </div>
+                    <div>
+                    <i class="fa-solid fa-droplet" style="font-size: 33px; color:#9C2222; margin-right:32px; margin-top:7px; overflow:hidden;"></i>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 </body>
-
 </html>

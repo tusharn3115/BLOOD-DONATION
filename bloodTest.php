@@ -246,7 +246,7 @@ if(isset($_REQUEST['submit'])){
 
 alert("Appointment Booked Successful");
 window.location.replace("getBlood.php");
-
+header('Location: /BloodDonationWebsite');
 </script>
 
 <?php
