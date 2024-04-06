@@ -1,15 +1,43 @@
 <?php
 include("../adminPanel/adminConnection.php");
-$id = $_REQUEST['id'];
-$email = $_REQUEST['email'];
+$id=$_REQUEST['id'];
+$email=$_REQUEST['email'];
+
+
+// get user data
+$query1="select* from dontformdata where id=$id";
+$res=mysqli_query($conn,$query1);
+
+$countRecord=mysqli_num_rows($res);
+if($countRecord>0){
+
+$data=mysqli_fetch_assoc($res);
+
+
+$dfirstname=$data['firstname'];
+$dlastname=$data['lastname'];
+$demail=$data['email'];
+$dphone=$data['phone'];
+$daddress=$data['address'];
+$ddistrict=$data['district'];
+$dpincode=$data['pincode'];
+$dtype=$data['type'];
+$ddescription=$data['description'];
+
+$insertNewRecordQuery="insert into donors(dfirstname,dlastname,demail,dphone,daddress,ddistrict,dpincode,dtype,ddescription) values('$dfirstname','$dlastname','$demail','$dphone','$daddress','$ddistrict','$dpincode','$dtype','$ddescription')";
+mysqli_query($conn,$insertNewRecordQuery);
+
+
+// deleting from dontformdata db
+
 $queryToDelete = "delete from dontformdata where id=$id";
 
 $to = "$email";
-$subject = "Confirmation: Blood Donation Request Cancelled";
+$subject = "Confirmation: Blood Donation Request Approved";
 $message = "
 <html>
     <head>
-        <title>Confirmation: Blood Donation Request Cancelled </title>
+        <title>Confirmation: Blood Donation Request Approved </title>
     </head>
 
     <body>
@@ -18,8 +46,7 @@ $message = "
         Dear Donor,
 
         I hope this email finds you well,<br> 
-        I regret to inform you that we are unable to accept your generous offer of blood donation at this time. This decision is not made lightly but is necessary due to a health issue or disease that has been identified.<br>
-        Please understand that our primary concern is the well-being and safety of both donors and recipients. While your intention to contribute to our blood donation efforts is commendable, it is essential that we prioritize the health and safety of all individuals involved.<br><br>
+        Approved<br><br>
 
         I want to assure you that your willingness to donate is deeply valued, and your gesture of kindness does not go unnoticed. Your willingness to support those in need is admirable and reflects your compassionate nature.<br>
         Although we are unable to accept your donation at this time, I encourage you to continue supporting our cause in other ways, such as raising awareness, encouraging others to donate, or participating in future donation drives when circumstances permit.<br>
@@ -45,13 +72,21 @@ $result = mail($to, $subject, $message, $headers);
 if ($result) {
 
     $res = mysqli_query($conn, $queryToDelete);
-    $countCount = mysqli_affected_rows($conn);
+    $countCounts = mysqli_affected_rows($conn);
 
-    if ($countCount > 0) {
+    if ($countCounts > 0) {
         echo "success";
     }
 }
 
 
 
+
+
+}
+
+
+
 ?>
+
+

@@ -107,7 +107,7 @@
 
 
             <h1>Address</h1>
-            <input type="text" name="address" id="address" placeholder="Address" autocomplete="off" required>
+            <input type="text" name="address" id="address" placeholder="Complete Address" autocomplete="off" required>
             <input type="text" name="pincode" id="pincode" required placeholder="Enter pincode" inputmode="numeric" pattern="[0-9]{6}" autocomplete="off" required>
 
 

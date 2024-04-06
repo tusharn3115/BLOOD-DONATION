@@ -34,7 +34,7 @@
 
     <div class="donationImg1">
         <div class="black"></div>
-        <h2>Schedule your blood test today</h2>
+        <h2>"Seeking a Lifesaver: Search for a Donor"</h2>
         <!-- <h4><a href="./bloodTest.php"><button>Blood Test</button></a></h4> -->
         <img src="./userSideImg/bloodTest.jpg" alt="error">
     </div>

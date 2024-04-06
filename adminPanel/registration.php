@@ -519,7 +519,7 @@ if (isset($_POST['logout'])) {
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="./dashboard.php" class="active" ><span class="las la-igloo"></span><span>DashBoard</span></a>
+                    <a href="./dashboard.php" class="active"><span class="las la-igloo"></span><span>DashBoard</span></a>
                 </li>
                 <li>
                     <a href="./adminDonors.php"><span class="las la-users"></span><span>Donors</span></a>
@@ -599,10 +599,8 @@ if (isset($_POST['logout'])) {
                                                     <td><?php echo $row['type']; ?></td>
                                                     <td><?php echo $row['description']; ?></td>
                                                     <td>
-                                                        <i class="fa-solid fa-trash" style="margin-right: 30px; font-size:large; text-decoration: none; color:red; cursor:pointer;"
-                                                        
-       onclick='deleteRecords("<?php echo $row['id'];?>","<?php echo $row['email'];?>")'></i>
-                                                        <i class="fa-solid fa-check" style="font-size:large; text-decoration: none; color:green;  cursor:pointer;"></i>
+                                                        <i class="fa-solid fa-trash" style="margin-right: 30px; font-size:large; text-decoration: none; color:red; cursor:pointer;" onclick='deleteRecords("<?php echo $row['id']; ?>","<?php echo $row['email']; ?>")'></i>
+                                                        <i class="fa-solid fa-check" style="font-size:large; text-decoration: none; color:green;  cursor:pointer;" onclick='acceptRecords("<?php echo $row['id']; ?>","<?php echo $row['email']; ?>")'></i>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -628,39 +626,68 @@ if (isset($_POST['logout'])) {
 
 
     <script>
-// deleting records
-function deleteRecords(id,email){
+        // deleting records
+        function deleteRecords(id, email) {
 
 
-$.ajax({
-                    type: "POST", //type of method
-                    url: "http://localhost/BloodDonationWebsite/api/deleteRecords.php", //your page
-                    data: {
-                        id: id,email:email
-                     
-                    }, 
-                    // return data
-                    success: function(res) {
-                  
-if(res=="success"){
-    alert('Record Successfully Deleted');
-    window.location.reload();
-}else{
-    alert('sorry something went work.Please try again');
-}
+            $.ajax({
+                type: "POST", //type of method
+                url: "http://localhost/BloodDonationWebsite/api/deleteRecords.php", //your page
+                data: {
+                    id: id,
+                    email: email
 
+                },
+                // return data
+                success: function(res) {
+
+                    if (res == "success") {
+                        alert('Record Successfully Deleted');
+                        window.location.reload();
+                    } else {
+                        alert('sorry something went work.Please try again');
                     }
-                })
-            }
+
+                }
+            })
+        }
     </script>
 
 
-    
+    <script>
+        // accepting records
+        function acceptRecords(id, email) {
+
+
+            $.ajax({
+                type: "POST", //type of method
+                url: "http://localhost/BloodDonationWebsite/api/acceptRecords.php", //your page
+                data: {
+                    id: id,
+                    email: email
+
+                },
+                // return data
+                success: function(res) {
+                    
+      
+                        alert('Record Successfully Approved');
+                        window.location.reload();
+                   
+
+                }
+            })
+        }
+    </script>
+
+
+
 </body>
 
 
 
 
-   <!-- ajax added -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- ajax added -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </html>

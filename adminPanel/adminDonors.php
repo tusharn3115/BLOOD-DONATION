@@ -578,6 +578,37 @@ tr td:last-child{
                     </div>
                 </div>
             </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 style="color: black;">Accepted Donors</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="130%">
+                                    <thead>
+                                        <tr>
+                                            <td>First Name</td>
+                                            <td>Last Name</td>
+                                            <td>Email</td>
+                                            <td>Phone</td>
+                                            <td>Address</td>
+                                            <td>District</td>
+                                            <td>Pincode</td>
+                                            <td>Blood Type</td>
+                                            <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
