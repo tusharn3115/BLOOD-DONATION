@@ -5,11 +5,11 @@ $email = $_REQUEST['email'];
 $queryToDelete = "delete from dontformdata where id=$id";
 
 $to = "$email";
-$subject = "Confirmation: Blood Donation Request Cancelled";
+$subject = "Rejection: Blood Donation Request Cancelled";
 $message = "
 <html>
     <head>
-        <title>Confirmation: Blood Donation Request Cancelled </title>
+        <title>Rejection: Blood Donation Request Cancelled </title>
     </head>
 
     <body>

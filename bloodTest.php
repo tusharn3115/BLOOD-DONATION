@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Blood Test Registration Form</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -154,6 +155,8 @@ form .input-box span.details{
 <body>
 
 
+
+
   <div class="container">
     <div class="title">SCHEDULE YOUR BLOOD TEST</div>
     <div class="content">
@@ -238,7 +241,7 @@ if(isset($_REQUEST['submit'])){
   $message = $_REQUEST('message');
   $gender = $_REQUEST['gender'];
 
-  $insert_query = mysqli_query($conn,"insert into blood_test_form set fname='$Fname',blood='$Blood',email='$Email',phoneNo='$phoneNo',date='$date',message='$message',gender='$gender'");
+  $insert_query = mysqli_query($conn,"insert into blood_test_form where fname='$Fname',blood='$Blood',email='$Email',phoneNo='$phoneNo',date='$date',message='$message',gender='$gender'");
 
   if ($insert_query > 0) {
     ?>

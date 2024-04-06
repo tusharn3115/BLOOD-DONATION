@@ -22,7 +22,8 @@ if (isset($_POST['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,intial-scale=1,maximum-scale=1">
-    <title>ADMIN PANEL</title>
+    <title>ADMIN PANEL / Registrations</title>
+    <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
     <script>
         // prevent reload post request
         if (window.history.replaceState) {

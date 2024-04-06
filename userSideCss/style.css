@@ -5,38 +5,41 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
+body{
 
+    overflow-x: hidden;
+}
 header {
   display: flex;
-  background-color: rgba(255, 255, 255, 1);
-  height: 90px;
+  background-color: rgba(255, 255, 255, 0.59);
+  height: 5.625rem;
   border-bottom: 1px solid rgb(164, 164, 164);
 }
 
 header .logo {
-  height: 110px;
+  height: 6.875rem; 
 }
-
 header .logo h2 {
   display: flex;
-  margin-left: 100px;
-  margin-top: -70px;
+  margin-left: 6.25rem;
+  margin-top: -4.375rem;
 }
-
 header .logo h2 span {
   color: red;
 }
 
 header .logo {
-  margin: 0px 14px;
-  padding: 0px 13px;
-  height: 120px;
-  width: 200px;
+  margin: 0rem 0.875rem;
+  padding: 0rem 0.8125rem;
+  height: 7.5rem;
+  width: 12.5rem;
 }
 
 header .logo img {
@@ -44,28 +47,24 @@ header .logo img {
   height: 83%;
   width: 55%;
 }
-
 header .list {
   margin-top: 2.5%;
   margin-left: 50%;
 }
-
 .list li {
-  margin-right: 20px;
+  margin-right: 1.25;
   display: inline-block;
   list-style: none;
 }
-
 .list a {
   font-weight: 600;
   color: rgb(0, 0, 0);
-  margin: 9px;
-  padding: 3px;
-  margin-right: 17px;
+  margin: 0.5625rem;
+  padding: 0.188rem;
+  margin-right: 1.063rem;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.063rem;
 }
-
 .list a:hover {
   color: rgb(203, 72, 72);
   transition: 0.2.5s ease;
@@ -76,26 +75,22 @@ header .list {
   margin-bottom: 5%;
   display: flex;
 }
-
 .mainDiv .Img {
   width: 70%;
-  height: 600px;
+  height: 37.5rem;
   background-color: red;
   overflow: hidden;
 }
-
 .mainDiv .Img img {
   width: 100%;
   height: 100%;
 }
-
 .mainDiv .contacts {
   padding-top: 5%;
   width: 45%;
 }
-
 .mainDiv .contacts h1 {
-  font-size: 35px;
+  font-size: 2.188rem;
   width: 75%;
   margin-top: 5%;
   margin-left: 10%;
@@ -104,24 +99,22 @@ header .list {
 .mainDiv .contacts .contact-details {
   margin-left: 10%;
   width: 90%;
-  font-size: 26px;
+  font-size: 1.625rem;
 }
-
 /* .mainDiv .contacts h1{
     margin-top:-500px;
     margin-left:-105px;
     gap:1vw;
 } */
 .contact-details {
-  height: 100px;
-  width: 200px;
+  height: 6.25rem;
+  width: 12.5rem;
 }
-
 .mainDiv .contacts .contact-details p {
-  color: grey;
-  font-size: 17px;
-  margin-top: 20px;
-  padding: 7px;
+  color: rgb(0, 0, 0);
+  font-size: 1.063rem;
+  margin-top: 1.25rem;
+  padding: 0.438rem;
 }
 
 .contact-button {
@@ -130,13 +123,17 @@ header .list {
 }
 
 .mainDiv .contacts .contact-button button {
-  background-color: rgb(203, 72, 72);
+  background-color: red;
   color: white;
-  margin-top: 30px;
-  height: 55px;
-  width: 130px;
+  margin-top: 1.875rem;
+  font-size: large;
+  height: 4.063rem;
+  width: 11.063;
   border: none;
-  border-radius: 5px;
+  margin:2.188 0rem;
+  padding:0.25rem;
+  background-color: red;
+  border-radius: 0.375rem;
 }
 
 .mainDiv .contacts .contact-button button:hover {
@@ -150,66 +147,58 @@ header .list {
   display: flex;
   justify-content: center;
 }
-
 .quote img {
   margin-top: 7%;
-  height: 70px;
-  width: 80px;
+  height: 4.375rem;
+  width: 5rem;
   display: block;
 }
 
 .quote-text {
   text-align: center;
-  margin-top: 30px;
-  font-size: 25px;
+  margin-top: 1.875rem;
+  font-size: 1.563rem;
 }
 
 .quote-text {
   display: flex;
   justify-content: center;
 }
-
 .quote-text h3 i {
   font-size: 120%;
 }
-
 .main {
   margin-left: 6%;
-  height: 50%;
-  width: 90%;
+  height: 40%;
+  width:90%;
+  margin-bottom: -0.45%;
   overflow: hidden;
 }
-
 .main h3 {
   color: rgb(201, 24, 24);
   margin-top: 14%;
 }
-
 .main h1 {
-  font-size: 44px;
+  font-size: 2.75rem;
 }
-
 .main1 {
   width: 50%;
 }
-
 .main1 p {
   padding-right: 1.3%;
-  color: grey;
+  margin-top: 2.55%;
+  color: black;
 }
-
 .main2 {
   height: 40%;
   width: 85%;
   margin-top: -10%;
   margin-left: 50%;
 }
-
 .main2 img {
   margin-right: 20%;
   height: auto;
   width: 70%;
-
 }
 
 .icon {
@@ -218,22 +207,18 @@ header .list {
   width: 20%;
   margin-top: -28%;
 }
-
 .icon span {
   color: black;
 }
-
 .icon h3 {
   padding: 1.8%;
   color: rgb(201, 24, 24);
   font-size: medium;
 }
-
 .fa-solid fa-check {
   display: inline;
   color: solid rgb(243, 52, 52);
 }
-
 .icon2 {
   float: left;
   height: 35%;
@@ -241,173 +226,443 @@ header .list {
   margin-top: -28%;
   margin-left: 27%;
 }
-
 .icon2 span {
   color: black;
 }
-
 .icon2 h3 {
   padding: 1.8%;
   color: rgb(201, 24, 24);
   font-size: medium;
 }
-
 .fa-solid {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: solid rgb(243, 52, 52);
 }
-
 .about {
   height: 10%;
   width: 12%;
   margin-top: -9%;
 }
-
 .about button {
   cursor: pointer;
   background-color: rgb(243, 52, 52);
   color: white;
   padding: 10% 30%;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: none;
 }
-
 .content {
-  margin-top: -0.43%;
-  height: 800px;
+  height: 37.5rem;
   width: 100%;
-  background-color: rgb(190, 69, 69);
+  border-radius: 4.25rem;
+  background-color:#A52A2A;
 }
 
 .content1 {
   background-color: white;
   margin-left: 6%;
-  height: 18%;
-  width: 35%;
-
+  height: 33.8%;
+  width: 33%;
+  border:1px solid white;
+  border-bottom-left-radius:1.25rem;
+  border-bottom-right-radius:1.375rem;
 }
-
 .content1 h1 {
-  margin-left: 8%;
-  padding: 1.2%;
-
+  font-size:x-large;
+  margin-left: 7%;
+  padding: 3%;
 }
-
-.content p {
+.content1 p {
   margin-left: 8%;
-  padding: 1.2%;
+  padding: 2%;
+  margin-top: 1%;
   color: rgb(84, 84, 84);
 }
-
 .content2 {
   float: right;
-  margin-top: -10%;
-  margin-right: 32.32%;
+  margin-top: -13.8%;
+  margin-right: 32%;
   height: 18%;
   width: 24%;
-  padding: 13px;
+  padding: 0.813rem;
 }
-
 .content2 h2 {
-
   color: white;
   margin-left: 32%;
 }
-
 .content2 p {
   color: white;
-  margin-left: 30%;
+  margin-top: 5%;
+  margin-left: 32%;
 }
-
 .card {
-  height: 60%;
+  height: 68%;
   width: 100%;
   position: relative;
   display: flex;
 }
 
 .c1 {
+  border:1px solid white;
+  border-radius:1.188rem;
   transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
   background-color: white;
   color: black;
   margin: auto;
   height: 72%;
-  width: 25%;
+  width: 23%;
 }
-
 .c2 {
+  border:1px solid white;
+  border-radius:1.188rem;
   transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
   background-color: white;
   margin: auto;
   height: 72%;
-  width: 25%;
+  width: 23%;
 }
-
 .c3 {
+  border:1px solid white;
+  border-radius:1.188rem;
   transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
   background-color: white;
   margin: auto;
   height: 72%;
-  width: 25%;
-}
-
-.c1 img {
-  opacity: 0.7;
-  margin: 7% 35%;
-  height: 24%;
-  width: 30%;
-}
-
-.c2 img {
-  margin: 7% 40%;
-  height: 24%;
-  width: 20%;
-}
-
-.c3 img {
-  margin: 7% 42%;
-  height: 25%;
   width: 23%;
 }
 
+.c1 img {
+  opacity: 0.6;
+  margin: 5% 35%;
+  height: 25.5%;
+  width: 27%;
+}
+
+.c2 img {
+  margin: 5% 40%;
+  height: 25.5%;
+  width: 21%;
+}
+.c3 img {
+  margin: 5% 42%;
+  height: 25.5%;
+  width: 20%;
+}
 .card h3 {
   font-size: x-large;
   text-align: center;
   padding: 5%;
   text-align: center;
 }
-
 .card p {
   text-align: center;
   margin: 0% 9%;
 }
 
-.card a {
-  color: rgb(190, 69, 69);
-  text-decoration: none;
-  text-align: center;
-  margin: 2% 34%;
-}
-
 .c1:hover {
   transform: translateY(-10px);
 }
-
 .c2:hover {
   transform: translateY(-10px);
 }
-
 .c3:hover {
   transform: translateY(-10px);
 }
 
+.event {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+.head {
+  height: 30%;
+  width: 100%;
+  margin: 3% 7%;
+}
+.donate {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.d1,
+.d2,
+.d3 {
+  position: relative;
+}
+.d1 {
+  margin-left: 104px;
+  background-color: blue;
+  height: 21.125rem;
+  width: 25rem;
+}
+.d2 {
+  background-color: rgb(91, 255, 15);
+  height: 21.125rem;
+  width: 25rem;
+}
+.d3 {
+  margin-right: 5.875rem;
+  background-color: rgb(255, 64, 0);
+  height: 21.125rem;
+  width: 25rem;
+}
+#c1,
+#c2,
+#c3 {
+  position: absolute;
+  bottom: 0%;
+  height: 14%;
+  width: 50%;
+  background-color: rgb(210, 59, 59);
+}
 
+#g1,
+#g2,
+#g3 {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  height: 14%;
+  width: 50%;
+  background-color: rgb(224, 15, 15);
+}
+.d1 img,
+.d2 img,
+.d3 img {
+  height: 18.25rem;
+  width: 25rem;
+}
 
+.d1 h3,
+.d2 h3,
+.d3 h3 {
+  margin-top: 0.875rem;
+  text-transform: uppercase;
+  color: white;
+}
 
+.manage {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: auto;
+  width: 100%;
+}
+.manage a{
+  color:black;
+    text-decoration: none; 
+     margin-top: 5%;
+}
+.manage i{
+  color:red;
+      margin-top: 4%;
+      margin-right: 4%;
+}
+.manage #t1,#t3{
+     margin-left: 22%;   
+}
+.manage #t2{
+       margin-left: 42%;
+}
+.m1,
+.m2,
+.m3 {
+  height: 3.438rem;
+  width: 25rem;
+  margin: 0rem 2.188rem;
+  background-color: rgb(191, 180, 163);
+}
+.m1 {
+  margin-left:2.75rem;
+}
+.m2 {
+  margin-left:1rem;
+}
+.m3 {
+  margin-left:0.875rem;
+}
 
+.title {
+  display: flex;
+  width: 100%;
+}
+.t1,
+.t2,
+.t3 {
+  width: 25rem;
 
+}
+.t1 {
+  margin-left: 6.5rem;
+}
+.t2 {
+  margin: 0rem 3.063rem;
+}
+.t3 {
+  margin-right: 0px;
+}
+.title h2 {
+  margin-top: 2.688rem;
+  font-size:1.813rem;
+  padding: 0.125rem;
+}
+.title h4 {
+  margin-top: 1.875rem;
+  padding: 0.063rem;
+  margin-bottom: 0.25rem;
+  color: rgb(67, 61, 61);
+}
 
-/* about us page styling */
+.end {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.end #e1 {
+  opacity: 0.34;
+  width: 100%;
+}
+.end #e2 {
+  position: absolute;
+  left: 0;
+  height: 7.5rem;
+}
+.h1 {
+  top: 0;
+  position: absolute;
+  margin-top: 11%;
+  margin-left: 7%;
+  margin-right: 10%;
+  height: 60%;
+  width: 23%;
+}
+.h1 h2 span {
+  display: flex;
+  color: red;
+}
+.h1 h2 {
+  margin-top: 1.5rem;
+  margin-left: 6.25rem;
+}
+.h1 h3 {
+  color: rgb(67, 61, 61);
+  font-size: medium;
+  margin-top: 0.75rem;
+  padding: 0.188rem;
+  margin-left: 2rem;
+}
+.h1 i {
+  transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
+  color: white;
+  border-radius: 0.75rem;
+  background-color: red;
+  padding: 0.563rem;
+  font-size: x-large;
+  margin-top: 1.375rem;
+  margin-left: 1.875rem;
+}
+.h1 i:hover{
+  transform: translateY(-10px);
+}
+.h2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  margin-left: 32%;
+  margin-top: 11%;
+  height: 60%;
+  width: 10%;
+}
+.h2 h3 {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2.188rem;
+}
+.h2 a {
+  text-decoration: none;
+  color: rgb(67, 61, 61);
+  font-weight: bold;
+  margin-left: 1.063rem;
+  justify-content: left;
+  padding: 0.438rem;
+}
+.h2 a:hover{
+     text-decoration: underline;
+}
+.h3 {
+  display:flex;
+  flex-direction: column;
+  position: absolute;
+  top:0;
+  margin-left:45%;
+  margin-top: 11%;
+  height:45%;
+  width: 25%;
+}
+.h3 h3{
+    margin-left: 1.438rem;
+    margin-top:1.563rem;
+    margin-bottom: 2.125rem;
+}
+.h3 a{
+    text-decoration: none;
+    padding:0.75rem;
+    font-weight:bold;
+    color:rgb(67, 61, 61);
+}
+.h3 a:hover{
+     text-decoration:underline;
+}
+.h3 i{
+    color:red;
+    margin:0rem 0.563rem;
+}
+.work{
+     position: absolute;
+     width:20%;
+     height:40%;
+     top:0;
+     margin-left: 72%;
+     margin-top: 11%;
+     padding:0.563rem;
+}
+
+.work h3{
+  margin-left: 0.75rem;
+    margin-top: 0.75rem;
+}
+.work h2{
+  margin-left: 0.75rem;
+  margin-top: 0.813rem;
+    font-size:medium;
+}
+.work h4{
+   margin-left: 0.75rem;
+    margin-top:2.313rem;
+}
+.work button{
+  cursor:pointer;   
+    border:none;
+    padding:0.75rem;
+    height: 26%;
+    width:50%;
+    transition: transform 0.3s cubic-bezier(0.68, -0.58, 0.27, 2);
+    color:white;
+    border-radius:0.813rem;
+    background-color:red;
+    margin-top: 1.25rem;
+    margin-left: 0.75rem;
+}
+.work button:hover{
+  transform: translateY(-10px);
+}
+.work i{
+    margin-right: 0.25rem;
+}
+
+/* About Us Page Css */
 .aboutUs-main {
   width: 100%;
   height: 100%;
@@ -417,7 +672,7 @@ header .list {
 
 .aboutUs-main .aboutUs-img-main {
   width: 70%;
-  height: 500px;
+  height: 31.25rem;
   overflow: hidden;
 }
 
@@ -429,11 +684,9 @@ header .list {
 .aboutUs-main .aboutUs-contacts {
   padding-top: 5%;
   width: 45%;
-
 }
-
 .aboutUs-main .aboutUs-contacts h1 {
-  font-size: 35px;
+  font-size: 2.188rem;
   width: 75%;
   margin-top: 5%;
   margin-left: 11%;
@@ -442,26 +695,25 @@ header .list {
 .aboutUs-main .aboutUs-contacts .aboutUs-contact-details {
   margin-left: 10%;
   width: 90%;
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 
 .aboutUs-contact-details {
-  height: 100px;
-  width: 200px;
+  height: 6,25rem;
+  width: 12.5rem;
 }
-
 .aboutUs-main .aboutUs-contacts .aboutUs-contact-details p {
   color: grey;
-  font-size: 17px;
-  margin-top: 20px;
-  padding: 7px;
+  font-size: 1.063rem;
+  margin-top: 1.25rem;
+  padding: 0.438rem;
 }
 
 .aboutUs-main .aboutUs-contacts .aboutUs-page {
   color: grey;
-  font-size: 17px;
-  margin-top: 20px;
-  padding: 7px;
+  font-size: 1.063rem;
+  margin-top: 1.25rem;
+  padding: 0.438rem;
   margin-left: 10%;
 }
 
@@ -494,9 +746,8 @@ header .list {
 }
 
 .about1-us {
-  margin-top: 150px;
+  margin-top: 9.375rem;
   width: 100%;
-  margin-bottom: 10%;
 }
 
 .about1-us h3 {
@@ -508,24 +759,20 @@ header .list {
 .about1-us h1 {
   display: flex;
   margin-left: 4%;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
-
-
 
 .about1-us .about1_container {
   display: flex;
-  margin-bottom: 7%;
+  margin-bottom: 4%;
   margin-top: 3%;
 }
-
 .about1-us .about1_container .aboutus1-details {
   width: 50%;
 }
-
 .about1-us .about1_container .aboutus1-details p {
   color: rgb(91, 86, 86);
-  margin-top: 20px;
+  margin-top: 1.25rem;
   margin-left: 9%;
 }
 
@@ -547,25 +794,26 @@ header .list {
   font-size: large;
 }
 
-
 /* our mission part css */
 .ourmission {
+  margin-top: -4%;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   overflow: hidden;
   background-color: rgb(237, 219, 219);
 }
 
 .ourmission-head {
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 200px;
+  margin-top: 25px;
   margin-bottom: 5%;
 }
 
 .ourmission-head h1 {
   font-weight: bolder;
   display: inline-block;
-  font-size: 50px;
+  font-size: 3.125rem;
   margin-left: 0;
   margin-top: -10%;
 }
@@ -583,48 +831,51 @@ header .list {
   padding-bottom: 4%;
   text-align: center;
 }
-
 .out {
   display: flex;
-  height: 100%;
+  height: 320px;
   width: 100%;
   text-align: center;
   margin-bottom: 10%;
 }
-
 .out .bx {
-  margin-top: 15px;
-  font-size: 90px;
+  margin-top: 0.938rem;
+  font-size: 5.625rem;
 }
-
 .out h5 {
-  margin-top: 18px;
-  font-size: 20px;
+  margin-top: 1.125rem;
+  font-size: 1.25rem;
 }
-
 .iicon1 {
-  width: 700px;
-  height: 300px;
+  width: 43.75rem;
+  height: 15.75rem;
   /* background-color:rgb(248, 231, 201); */
   margin-left: 5%;
 }
-
 .iicon2 {
-  width: 700px;
-  height: 300px;
+  width: 43.75rem;
+  height: 15.75rem;
   margin-left: 12%;
   /* background-color:rgb(255, 255, 255); */
 }
-
 .iicon3 {
-  width: 700px;
-  height: 300px;
+  width: 43.75rem;
+  height: 15.75rem;
   margin-left: 12%;
   margin-right: 7%;
   /* background-color:rgb(255, 255, 255); */
-
 }
 
+@media(max-width:844px){ 
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:768px){ 
+  html{
+      font-size: 45%;
+  }
+}
 
 
 
@@ -729,10 +980,11 @@ header .list {
   border: 1px solid grey;
   text-align: left;
   width: 50%;
-  height: 900px;
+  height: 1050px;
   margin-top: 1%;
   margin-left: 25%;
   padding-left: 30px;
+  margin-bottom: 25px;
 }
 
 .donationForm2 h1 {
@@ -810,7 +1062,7 @@ header .list {
 
 /* button */
 .donationForm2 button {
-  margin-top: 7%;
+  margin-top: 3%;
   margin-left: 35%;
   padding: 2%;
   background-color: rgb(218, 45, 45);
@@ -833,4 +1085,10 @@ header .list {
 
 .donationForm2 button:hover {
   box-shadow: inset 0 0 0 50px #000000;
+}
+
+.donationForm2 input#file{
+  font-size: 15px;
+  margin-top: -0.5%;
+  margin-bottom: 2%;
 }

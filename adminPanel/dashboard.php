@@ -21,7 +21,8 @@ if(isset($_POST['logout'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,intial-scale=1,maximum-scale=1">
-    <title>ADMIN PANEL</title>
+    <title>ADMIN PANEL / Dashboard</title>
+    <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a878869527.js" crossorigin="anonymous"></script>
     <script>
         // prevent reload post request

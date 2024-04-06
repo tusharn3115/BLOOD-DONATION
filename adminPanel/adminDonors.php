@@ -21,7 +21,8 @@ if(isset($_POST['logout'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,intial-scale=1,maximum-scale=1">
-    <title>ADMIN PANEL</title>
+    <title>ADMIN PANEL / Donors</title>
+    <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a878869527.js" crossorigin="anonymous"></script>
     <script>
         // prevent reload post request
@@ -601,7 +602,36 @@ tr td:last-child{
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                    <?php
+                                        include("adminConnection.php");
+                                        $query = "SELECT * FROM donors";
+                                        $query_run = mysqli_query($conn, $query);
+
+                                        if (mysqli_num_rows($query_run) > 0) {
+                                            foreach ($query_run as $row) {
+                                                // echo $row['firstname'];
+                                        ?>
+                                                <tr>
+                                                    <td><?php echo $row['dfirstname']; ?></td>
+                                                    <td><?php echo $row['dlastname']; ?></td>
+                                                    <td><?php echo $row['demail']; ?></td>
+                                                    <td><?php echo $row['dphone']; ?></td>
+                                                    <td><?php echo $row['daddress']; ?></td>
+                                                    <td><?php echo $row['ddistrict']; ?></td>
+                                                    <td><?php echo $row['dpincode']; ?></td>
+                                                    <td><?php echo $row['dtype']; ?></td>
+                                                    <td><?php echo $row['ddescription']; ?></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                            <tr>
+                                                <td>No record found</td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

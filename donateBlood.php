@@ -40,10 +40,10 @@
 
         <div class="list">
             <ul>
-                <li><a href="/BloodDonationWebsite/index.php">Home</a></li>
-                <li><a href="/BloodDonationWebsite/aboutUs.php">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="/BloodDonationWebsite/donateBlood.php">Donate</a></li>
+                <a href="./index.php">Home</a>
+                <a href="./aboutUs.php">About Us</a>
+                <a href="./bloodTest.php">Blood Test</a>
+                <a href="./donateBlood.php">Donate</a>
             </ul>
         </div>
     </header>
@@ -117,12 +117,54 @@
                 <option value="chandigarh">Chandigarh</option>
             </select>
 
+            <h1 style="margin-top: 50px;">Upload Blood Report</h1>
+            <input type="file" name="file" id="file">
 
-            <button name="submit">Donate Now</button>
+
+            <button name="submit" style="margin-bottom: 25px;">Donate Now</button>
             </form>
         </div>
     </div>
+    <footer class="end">
+        <img src="./userSideImg/footerImg (1).jpg" alt="" id="e1" />
+        <div class="h1">
+            <img src="./userSideImg/logo.png" alt="" id="e2" />
+            <h2><span>RED</span>lifesaver</h2>
+            <h3>
+
+                Join RedLifeSaver, where every click saves a life. Donate blood, share hope, and be a hero today!
+            </h3>
+            <!-- <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i> -->
+        </div>
+
+        <div class="h2">
+            <h3>Quick links</h3>
+            <a href="./aboutUs.php">ABOUT US</a>
+            <a href="#">CHARITY</a>
+            <a href="#">FAQ</a>
+            <a href="#">TERM & CONDITIONS</a>
+        </div>
+
+        <div class="h3">
+            <h3>USEFUL LINKS</h3>
+            <a href="#"><i class="fa-solid fa-location-dot"></i>S.D COLLEGE,SECTOR: 32
+                A,CHANDIGARH</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+91 1234567890</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>redlifesaver@gmail.com</a>
+        </div>
+
+        <div class="work">
+            <h3>WORK HOURS</h3>
+            <h2>MON - FRI : 9:00 AM - 19:00 PM</h2>
+            <h4>NEED HELP? CONTACT US</h4>
+            <button><i class="fa-solid fa-phone"></i>CONTACT US</button>
+        </div>
+    </footer>
 </body>
+
 </html>
 
 
@@ -139,9 +181,9 @@
 require('connection.php');
 
 if (isset($_REQUEST['submit'])) {
-    date_default_timezone_set("Asia/Calcutta"); 
-    $Date=date("Y/m/d");
-$time=date('H:i:s');
+    date_default_timezone_set("Asia/Calcutta");
+    $Date = date("Y/m/d");
+    $time = date('H:i:s');
     $bloodgroup = $_REQUEST['bloodgroup'];
     $fname = $_REQUEST['fname'];
     $lname = $_REQUEST['lname'];
@@ -156,8 +198,8 @@ $time=date('H:i:s');
     $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
 
     if ($insert_query > 0) {
-        
- 
+
+
 
 
 
@@ -200,29 +242,25 @@ $time=date('H:i:s');
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
         $headers .= 'From: negitushar81@gmail.com' . "\r\n";
-        
-        
+
+
         $result = mail($to, $subject, $message, $headers);
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         if ($result == true) {
-            ?>
+?>
             <script>
-            alert('Record Successfully Deleted');
+                alert('Record Successfully Deleted');
             </script>
 
-            <?php
+<?php
 
             header('Location: /BloodDonationWebsite');
         }
-        
-        
-        
-
     } else {
         echo "Error";
     }
