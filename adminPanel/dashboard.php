@@ -469,7 +469,6 @@ tr td:last-child{
                 <li>
                     <a href=""><span class="las la-shopping-bag"></span><span>Orders</span></a>
                 </li>
-
             </ul>
         </div>
     </div>

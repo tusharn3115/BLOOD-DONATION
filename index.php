@@ -189,7 +189,7 @@
                 <a href="https://maps.app.goo.gl/CPyvav6znjmRSPSW6" id="t3"><i class="fa-solid fa-location-dot"></i>SECTOR 32
                     HOSPITAL</a>
             </div>
-        </div>z
+        </div>
         <div class="title">
             <div class="t1">
                 <h2>BLOOD DONATION FOR INDEPENDENCE DAY</h2>

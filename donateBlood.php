@@ -78,7 +78,7 @@
     <div class="fullForm">
         <div class="donationForm1">
             <h1>Blood Type</h1>
-            <form action="donateBlood.php" method="POST">
+            <form action="donateBlood.php" method="POST" enctype="multipart/form-data">
                 <br><br>
                 <select name="bloodgroup">
                     <option value="default">Select your blood type</option>
@@ -114,14 +114,14 @@
             <select name="district" id="district">
                 <option value="default">Select your district</option>
                 <option value="panchkula">Panchkula</option>
-                <option value="chandigarh">Chandigarh</option>
+                <option value="chandigarh">Chandigarh</option> 
             </select>
 
             <h1 style="margin-top: 50px;">Upload Blood Report</h1>
-            <input type="file" name="file" id="file">
+            <input type="file" name="files" id="file" required>
 
 
-            <button name="submit" style="margin-bottom: 25px;">Donate Now</button>
+            <button name="submit" style="margin-bottom: 25px;border-radius:20px">Donate Now</button>
             </form>
         </div>
     </div>
@@ -193,16 +193,21 @@ if (isset($_REQUEST['submit'])) {
     $address = $_REQUEST['address'];
     $pincode = $_REQUEST['pincode'];
     $district = $_REQUEST['district'];
+    $file = $_REQUEST['files'];
 
 
-    $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district'");
+    $OriginalFileName = $_FILES['blood_report']['name'];
+    //file name temporary
+    $tmp_name = $_FILES['blood_report']['tmp_name'];
+
+    $location = "./userBloodReports";
+    //generating unique name for images
+    $newLocationFileName = $location . time() . "-" . rand(1000, 9999) . "-" . $OriginalFileName;
+
+
+    $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district',file='$file'");
 
     if ($insert_query > 0) {
-
-
-
-
-
 
 
 
@@ -240,8 +245,8 @@ if (isset($_REQUEST['submit'])) {
         ";
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
-        $headers .= 'From: negitushar81@gmail.com' . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: cognitivecorner2@gmail.com' . "\r\n";
 
 
         $result = mail($to, $subject, $message, $headers);
@@ -252,14 +257,13 @@ if (isset($_REQUEST['submit'])) {
 
 
         if ($result == true) {
-?>
-            <script>
-                alert('Record Successfully Deleted');
-            </script>
 
-<?php
+    echo "<script>
+    alert('Record Successfully Registered');
+</script>"     ;   
 
-            header('Location: /BloodDonationWebsite');
+
+            // header('Location: /BloodDonationWebsite');
         }
     } else {
         echo "Error";

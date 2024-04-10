@@ -72,7 +72,7 @@
     </div>
 
     <!-- our mission -->
-    <div class="ourmission">
+    <div class="ourmission"> 
       <div class="ourmission-head">
         <h1>OUR MISSION</h1>
         <p>Blood bonds: uniting hearts, saving lives, one donation</p>
