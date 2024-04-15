@@ -1,36 +1,17 @@
-<?php
-session_start();
-if (!isset($_SESSION['adminLoginId'])) {
-    header("location: adminLogin.php");
-}
-?>
-
-<!-- logout logic -->
-<?php
-
-if (isset($_POST['logout'])) {
-    session_destroy();
-    header("location: adminLogin.php");
-}
-?>
-
-
-
-
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,intial-scale=1,maximum-scale=1">
-    <title>ADMIN PANEL / Registrations</title>
+    <title>ADMIN PANEL / Donation</title>
     <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a878869527.js" crossorigin="anonymous"></script>
     <script>
         // prevent reload post request
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href)
         }
     </script>
-    <script src="https://kit.fontawesome.com/a878869527.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -102,6 +83,8 @@ if (isset($_POST['logout'])) {
             font-size: 1.5rem;
             padding-right: 1rem;
         }
+
+
 
         #nav-toggle:checked+.sidebar {
             width: 70px;
@@ -361,7 +344,6 @@ if (isset($_POST['logout'])) {
             color: var(--main-color);
         }
 
-
         @media only screen and (max-width:1200px) {
             .sidebar {
                 width: 70px;
@@ -531,7 +513,6 @@ if (isset($_POST['logout'])) {
                 <li>
                     <a href="./adminCharity.php"><span class="las la-shopping-bag"></span><span>Donation</span></a>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -541,7 +522,7 @@ if (isset($_POST['logout'])) {
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
-                Registrations
+                Donation
             </h2>
 
 
@@ -555,140 +536,37 @@ if (isset($_POST['logout'])) {
                 </div>
             </div>
         </header>
-        <main>
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>All Registrations Of Donors</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="130%">
-                                    <thead>
-                                        <tr>
-                                            <td>First Name</td>
-                                            <td>Last Name</td>
-                                            <td>Email</td>
-                                            <td>Phone</td>
-                                            <td>Address</td>
-                                            <td>District</td>
-                                            <td>Pincode</td>
-                                            <td>Blood Type</td>
-                                            <td>Description</td>
-                                            <td>Operation</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        include("adminConnection.php");
-                                        $query = "SELECT * FROM dontformdata";
-                                        $query_run = mysqli_query($conn, $query);
 
-                                        if (mysqli_num_rows($query_run) > 0) {
-                                            foreach ($query_run as $row) {
-                                                // echo $row['firstname'];
-                                        ?>
-                                                <tr>
-                                                    <td><?php echo $row['firstname']; ?></td>
-                                                    <td><?php echo $row['lastname']; ?></td>
-                                                    <td><?php echo $row['email']; ?></td>
-                                                    <td><?php echo $row['phone']; ?></td>
-                                                    <td><?php echo $row['address']; ?></td>
-                                                    <td><?php echo $row['district']; ?></td>
-                                                    <td><?php echo $row['pincode']; ?></td>
-                                                    <td><?php echo $row['type']; ?></td>
-                                                    <td><?php echo $row['description']; ?></td>
-                                                    <td>
-                                                        <i class="fa-solid fa-trash" style="margin-right: 30px; font-size:large; text-decoration: none; color:red; cursor:pointer;" onclick='deleteRecords("<?php echo $row['id']; ?>","<?php echo $row['email']; ?>")'></i>
-                                                        <i class="fa-solid fa-check" style="font-size:large; text-decoration: none; color:green;  cursor:pointer;" onclick='acceptRecords("<?php echo $row['id']; ?>","<?php echo $row['email']; ?>")'></i>
-                                                    </td>
-                                                </tr>
-                                            <?php
-                                            }
-                                        } else {
-                                            ?>
-                                            <tr>
-                                                <td>No record found</td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+        <section class="donate" style=" margin-left:15%;font-size:1.3rem; background:rgb(156, 34, 34); width:70%;height:84%;margin-top:10%;">
+            <div class="donat" style="margin-left: 5%;">
+                <h1 style="color: white;font-size:2.6rem; margin-top:3%">DONATION REPORT</h1><br><br>
+                <p style="font-size: 1.5rem; color:white;">TOTAL DONATION RECIEVED <span style=" margin-left:25%"> $50,000</span><br><br>
+
+                <p style="color: white;">
+                    Tushar Negi (India)<span style="color: white; margin-left:49%">$20</span><br>
+                    <span style="color:gray;font-size:1rem;">10/01/2024</span>
+                </p>
+                <br>
+                <p style="color: white;">
+                    Suraj Singh (India)<span style="color: white; margin-left:50%">$30</span><br>
+                    <span style="color:gray;font-size:1rem;">16/01/2024</span>
+                </p>
+                <br>
+                <p style="color: white;">
+                    Paras Singh(India)<span style="color: white; margin-left:50%">$15</span><br>
+                    <span style="color:gray;font-size:1rem;">24/01/2024</span>
+                </p>
+                <br>
+                <p style="color: white;">
+                    Vishal Gupta (India)<span style="color: white; margin-left:48%">$45</span><br>
+                    <span style="color:gray;font-size:1rem;">10/02/2024</span>
+                </p>
             </div>
-        </main>
-    </div>
 
-
-
-    <script>
-        // deleting records
-        function deleteRecords(id, email) {
-
-
-            $.ajax({
-                type: "POST", //type of method
-                url: "http://localhost/BloodDonationWebsite/api/deleteRecords.php", //your page
-                data: {
-                    id: id,
-                    email: email
-
-                },
-                // return data
-                success: function(res) {
-
-                    if (res == "success") {
-                        alert('Record Successfully Deleted');
-                        window.location.reload();
-                    } else {
-                        alert('sorry something went work.Please try again');
-                    }
-
-                }
-            })
-        }
-    </script>
-
-
-    <script>
-        // accepting records
-        function acceptRecords(id, email) {
-
-
-            $.ajax({
-                type: "POST", //type of method
-                url: "http://localhost/BloodDonationWebsite/api/acceptRecords.php", //your page
-                data: {
-                    id: id,
-                    email: email
-
-                },
-                // return data
-                success: function(res) {
-                    
-      
-                        alert('Record Successfully Approved');
-                        window.location.reload();
-                   
-
-                }
-            })
-        }
-    </script>
-
-
+        </section>
 
 </body>
-
-
-
-
-<!-- ajax added -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </html>

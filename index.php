@@ -231,7 +231,7 @@
         <div class="h2">
             <h3>Quick links</h3>
             <a href="#">ABOUT US</a>
-            <a href="#">CHARITY</a>
+            <a href="./charity.php">CHARITY</a>
             <a href="#">FAQ</a>
             <a href="#">TERM & CONDITIONS</a>
         </div>
