@@ -76,7 +76,7 @@
                                     <div class="form-group">
                                         <input type="text" name="bloodType" class="form-control" id="" placeholder="Enter Blood Type..." required autocomplete="off">  
                                     </div>
-                                    <input type="submit" value="Search" name="search" style="background-color: red;width:16%;color:white; border:none; padding:1%; margin-top:3%; border-radius:20%">
+                                    <input type="submit" value="Search" name="search" style="background-color: red;width:16%;color:white; border:none; padding:1%; margin-top:3%; border-radius:25px">
                                     </form>
                            
                             </div>

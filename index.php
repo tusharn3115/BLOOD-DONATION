@@ -103,7 +103,9 @@
         </div>
 
         <div class="about">
+            <form action="./aboutUs.php">
             <button>About US</button>
+            </form>
         </div>
     </div>
 
