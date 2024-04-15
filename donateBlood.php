@@ -74,11 +74,10 @@
 
 
     <!-- donation form -->
-
-    <div class="fullForm">
-        <div class="donationForm1">
-            <h1>Blood Type</h1>
-            <form action="donateBlood.php" method="POST" enctype="multipart/form-data">
+    <form action="./donateBlood.php" method="POST" enctype="multipart/form-data">
+        <div class="fullForm">
+            <div class="donationForm1">
+                <h1>Blood Type</h1>
                 <br><br>
                 <select name="bloodgroup">
                     <option value="default">Select your blood type</option>
@@ -91,40 +90,48 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
-        </div>
-
-
-
-
-        <div class="donationForm2">
-            <h1>Personal Details</h1>
-            <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
-            <input type="text" name="lname" id placeholder="Last Name" autocomplete="off" required>
-            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
-            <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="off" required pattern="[0-9]{10}">
-            <textarea name="case" id cols="90" rows="10" placeholder="Health Description or any Disease..." required></textarea>
-            <br>
-
-
-            <h1>Address</h1>
-            <input type="text" name="address" id="address" placeholder="Complete Address" autocomplete="off" required>
-            <input type="text" name="pincode" id="pincode" required placeholder="Enter pincode" inputmode="numeric" pattern="[0-9]{6}" autocomplete="off" required>
-
-
-            <select name="district" id="district">
-                <option value="default">Select your district</option>
-                <option value="panchkula">Panchkula</option>
-                <option value="chandigarh">Chandigarh</option> 
-            </select>
-
-            <h1 style="margin-top: 50px;">Upload Blood Report</h1>
-            <input type="file" name="files" id="file" required>
-
-
-            <button name="submit" style="margin-bottom: 25px;border-radius:20px">Donate Now</button>
-            </form>
-        </div>
+    </form>
     </div>
+
+
+
+
+    <div class="donationForm2">
+        <h1>Personal Details</h1>
+        <input type="text" name="fname" id placeholder="First Name" autocomplete="off" required>
+        <input type="text" name="lname" id placeholder="Last Name" autocomplete="off" required>
+        <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
+        <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="off" required pattern="[0-9]{10}">
+        <textarea name="case" id cols="90" rows="10" placeholder="Health Description or any Disease..." required></textarea>
+        <br>
+
+
+        <h1>Address</h1>
+        <input type="text" name="address" id="address" placeholder="Complete Address" autocomplete="off" required>
+        <input type="text" name="pincode" id="pincode" required placeholder="Enter pincode" inputmode="numeric" pattern="[0-9]{6}" autocomplete="off" required>
+
+
+        <select name="district" id="district">
+            <option value="default">Select your district</option>
+            <option value="panchkula">Panchkula</option>
+            <option value="chandigarh">Chandigarh</option>
+        </select>
+
+        <h1 style="margin-top: 50px;">Upload Blood Report</h1>
+        <input type="file" name="images" id="file" required>
+
+
+        <button name="submit" style="margin-bottom: 25px;border-radius:20px">Donate Now</button>
+    </div>
+    </div>
+    </form>
+
+
+
+
+
+
+    <!-- footer part -->
     <footer class="end">
         <img src="./userSideImg/footerImg (1).jpg" alt="" id="e1" />
         <div class="h1">
@@ -193,81 +200,89 @@ if (isset($_REQUEST['submit'])) {
     $address = $_REQUEST['address'];
     $pincode = $_REQUEST['pincode'];
     $district = $_REQUEST['district'];
-    $file = $_REQUEST['files'];
 
 
-    $OriginalFileName = $_FILES['blood_report']['name'];
+
+    // storing image into folder
+    $OriginalFileName = $_FILES['images']['name'];
+    // echo $OriginalFileName;
     //file name temporary
-    $tmp_name = $_FILES['blood_report']['tmp_name'];
+    $tmp_name = $_FILES['images']['tmp_name'];
 
-    $location = "./userBloodReports";
+    $location = "./userBloodReports/";
     //generating unique name for images
     $newLocationFileName = $location . time() . "-" . rand(1000, 9999) . "-" . $OriginalFileName;
+    if (move_uploaded_file($tmp_name,  $newLocationFileName)) {
+        $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district',file='$newLocationFileName'");
 
-
-    $insert_query = mysqli_query($con, "insert into dontformdata set insert_time='$time',insert_date='$Date',type='$bloodgroup',firstname='$fname',lastname='$lname',email='$email',phone='$phone',description='$case',address='$address',pincode='$pincode',district='$district',file='$file'");
-
-    if ($insert_query > 0) {
-
-
-
-
-        $to = "$email";
-        $subject = "Confirmation: Blood Donation Registration Successful";
-        $message = "
-        <html>
-            <head>
-                <title>Confirmation: Blood Donation Registration </title>
-            </head>
-        
-            <body>
-                <div>
-              
-                Dear Donor,<br><br>
-        
-                We hope this mail finds you well.<br>
-                
-                I am writing to inform you that your registration for blood donation has been successfully processed. Your commitment to contributing to our community's health and well-being through this act of kindness is truly commendable.<br><br>
-                
-                Your willingness to donate blood is invaluable, as it plays a vital role in saving lives and supporting those in need during critical times. Your generosity will undoubtedly make a significant difference in the lives of many individuals.<br><br>
-                
-                We will be in touch with further details regarding the donation process, including scheduling and location, closer to the donation date. In the meantime, if you have any questions or require additional information, please do not hesitate to contact us.<br><br>
-                
-                Once again, thank you for your compassion and willingness to give back to the community. Your donation will undoubtedly leave a lasting impact, and we are truly grateful for your support.<br>
-                <br>
-                Best regards,
-                <br>
-                Team REDlifesaver.
-        
-            
-            </body>
-        </html>
-        ";
-        // Always set content-type when sending HTML email
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= 'From: cognitivecorner2@gmail.com' . "\r\n";
-
-
-        $result = mail($to, $subject, $message, $headers);
-
-
-
-
-
-
-        if ($result == true) {
-
-    echo "<script>
-    alert('Record Successfully Registered');
-</script>"     ;   
-
-
-            // header('Location: /BloodDonationWebsite');
+        if ($insert_query > 0) {
+    
+    
+    
+    
+                    $to = "$email";
+                    $subject = "Confirmation: Blood Donation Registration Successful";
+                    $message = "
+                    <html>
+                        <head>
+                            <title>Confirmation: Blood Donation Registration </title>
+                        </head>
+    
+                        <body>
+                            <div>
+    
+                            Dear Donor,<br><br>
+    
+                            We hope this mail finds you well.<br>
+    
+                            I am writing to inform you that your registration for blood donation has been successfully processed. Your commitment to contributing to our community's health and well-being through this act of kindness is truly commendable.<br><br>
+    
+                            Your willingness to donate blood is invaluable, as it plays a vital role in saving lives and supporting those in need during critical times. Your generosity will undoubtedly make a significant difference in the lives of many individuals.<br><br>
+    
+                            We will be in touch with further details regarding the donation process, including scheduling and location, closer to the donation date. In the meantime, if you have any questions or require additional information, please do not hesitate to contact us.<br><br>
+    
+                            Once again, thank you for your compassion and willingness to give back to the community. Your donation will undoubtedly leave a lasting impact, and we are truly grateful for your support.<br>
+                            <br>
+                            Best regards,
+                            <br>
+                            Team REDlifesaver.
+    
+    
+                        </body>
+                    </html>
+                    ";
+                    // Always set content-type when sending HTML email
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    $headers .= 'From: cognitivecorner2@gmail.com' . "\r\n";
+    
+    
+                    $result = mail($to, $subject, $message, $headers);
+    
+    
+    
+    
+    
+    
+                    if ($result == true) {
+    
+                echo "<script>
+                alert('Record Successfully Registered');
+            </script>"     ;   
+    
+    
+                        // header('Location: /BloodDonationWebsite');
+                    }
+                else {
+                    echo "Error";
+                }
         }
-    } else {
-        echo "Error";
     }
+
+
+
+
+
 }
 
 

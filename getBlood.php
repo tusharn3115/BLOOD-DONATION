@@ -62,7 +62,7 @@
     <!-- MAIN SECTION -->
 
 
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-md-12 mt-6" style="margin-top: 8%;">
                 <div class="card">
@@ -74,24 +74,23 @@
                             <div class="col-md-6">
                                 <form action="./getBlood.php" method="post">
                                     <div class="form-group">
-                                        <input type="text" name="bloodType" class="form-control" id="" placeholder="Enter Blood Type..." required>
+                                        <input type="text" name="bloodType" class="form-control" id="" placeholder="Enter Blood Type..." required autocomplete="off">  
                                     </div>
-                                    <button type="button" name="search" class="btn btn-primary">Search</button>
-                                </form>
+                                    <input type="submit" value="Search" name="search" style="background-color: red;width:16%;color:white; border:none; padding:1%; margin-top:3%; border-radius:20%">
+                                    </form>
+                           
                             </div>
-                        </div>
-
                         <?php
                         include('connection.php');
                         if (isset($_POST['search'])) {
                             $type = $_POST['bloodType'];
-                            $query = "select * form donors where dtype = '$type'";
+                            $query = "select * from donors where dtype = '$type'";
                             $query_run = mysqli_query($con, $query);
 
                         ?>
 
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
+                            <div class="table-responsive" style="margin-top:3%;">
+                                <table class="table table-dark table-bordered">
                                     <thead>
                                         <tr>
                                             <th scope="col">#Id</th>
@@ -112,7 +111,6 @@
                                             while ($row = mysqli_fetch_array($query_run)) {
                                         ?>
                                                 <tr>
-                                                    <td>hello</td>
                                                     <td><?php echo $row['id_d']; ?></td>
                                                     <td><?php echo $row['dfirstname']; ?></td>
                                                     <td><?php echo $row['dlastname']; ?></td>
@@ -144,7 +142,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> </div>
+                        
+    
 
 
 
@@ -167,7 +167,7 @@
 
 
 
-    <footer class="end">
+    <footer class="end" >
         <img src="./userSideImg/footerImg (1).jpg" alt="" id="e1" />
         <div class="h1">
             <img src="./userSideImg/logo.png" alt="" id="e2" />
@@ -177,7 +177,7 @@
             </h3>
         </div>
 
-        <div class="h2">
+        <div class="h2" style="font-size: medium;">
             <h3>Quick links</h3>
             <a href="#">ABOUT US</a>
             <a href="#">CHARITY</a>
@@ -185,7 +185,7 @@
             <a href="#">TERM & CONDITIONS</a>
         </div>
 
-        <div class="h3">
+        <div class="h3"  style="font-size: medium;">
             <h3>USEFUL LINKS</h3>
             <a href="#"><i class="fa-solid fa-location-dot"></i>S.D COLLEGE,SECTOR: 32
                 A,CHANDIGARH</a>
