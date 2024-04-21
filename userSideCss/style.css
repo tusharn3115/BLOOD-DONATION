@@ -469,17 +469,19 @@ header .list {
 .m3 {
   height: 3.438rem;
   width: 25rem;
-  margin: 0rem 2.188rem;
+  margin: 0rem 3.170rem;
   background-color: rgb(191, 180, 163);
 }
 .m1 {
-  margin-left:2.75rem;
+  margin:0px 23px 0px 61px;
 }
 .m2 {
-  margin-left:1rem;
+  /* margin-left:27px;  */
+  margin:0px 10px 0px 38px;
 }
 .m3 {
-  margin-left:0.875rem;
+    margin-left:0px 0px 0px 46px;
+  /* margin-left:26px; */
 }
 
 .title {

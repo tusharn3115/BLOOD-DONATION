@@ -464,7 +464,7 @@ tr td:last-child{
                     <a href="./registration.php"><span class="las la-clipboard-list"></span><span>Registrations</span></a>
                 </li>
                 <li>
-                    <a href="./adminCharity.php"><span class="las la-shopping-bag"></span><span>Donation</span></a>
+                <a href="./adminCharity.php"><span class="fa-solid fa-hand-holding-dollar"></span><span>Donation</span></a>
                 </li>
 
             </ul>

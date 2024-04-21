@@ -184,6 +184,7 @@
 <!-- establishing connection with database -->
 
 <?php
+
 // connection file included
 require('connection.php');
 
@@ -231,7 +232,7 @@ if (isset($_REQUEST['submit'])) {
                         <body>
                             <div>
     
-                            Dear Donor,<br><br>
+                            Dear $fname,<br><br>
     
                             We hope this mail finds you well.<br>
     
