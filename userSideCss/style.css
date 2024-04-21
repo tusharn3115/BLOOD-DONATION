@@ -519,10 +519,13 @@ header .list {
   position: relative;
   height: auto;
   width: 100%;
+  
 }
 .end #e1 {
+  margin-bottom: -6px;
   opacity: 0.34;
-  width: 100%;
+  width: 105%;
+  /* overflow-x: hidden; */
 }
 .end #e2 {
   position: absolute;
