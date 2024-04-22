@@ -1,7 +1,7 @@
 <?php
 
 $username = 'root';
-$password = '';
+$password = ''; 
 $server = 'localhost';
 $db = 'redlifesaver';
 

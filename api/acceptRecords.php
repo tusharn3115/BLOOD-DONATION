@@ -43,7 +43,7 @@ if ($countRecord > 0) {
     <body>
         <div>
       
-        Dear Donor,<br><br>
+        Dear $dfirstname,<br><br>
         I hope this email finds you well. I am writing to formally approve the blood donor request<br>
         submitted through our website, REDlifesaver, and express our gratitude for their<br>
         willingness to contribute to such a noble cause.<br>
@@ -56,7 +56,7 @@ if ($countRecord > 0) {
         choosing to partner with us in our efforts to save lives. We look forward to their participation in our<br>
         upcoming blood donation drives and events.<br>
         <br><br>
-        Thank you once again for your dedication to our cause, and please feel free to reach out if you<br>
+        Thank you once again for your dedication to our cause, and please feel free to reach out if you
         have any questions or concerns.<br><br>
         Warm regards,<br>
         Team REDlifesaver.

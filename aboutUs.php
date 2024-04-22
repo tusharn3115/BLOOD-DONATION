@@ -98,39 +98,38 @@
 
 
     <!-- footer -->
-    <footer class="end">
-      <img src="./userSideImg/footerImg (1).jpg" alt="" id="e1" />
-      <div class="h1">
-        <img src="./userSideImg/logo.png" alt="" id="e2" />
-        <h2><span>RED</span>lifesaver</h2>
-        <h3 style="color: black;">
+    <footer class="end" >
+        <img src="./userSideImg/footerImg (1).jpg" alt="" id="e1" />
+        <div class="h1">
+            <img src="./userSideImg/logo.png" alt="" id="e2" />
+            <h2><span>RED</span>lifesaver</h2>
+            <h3>
+                Join RedLifeSaver, where every click saves a life. Donate blood, share hope, and be a hero today!
+            </h3>
+        </div>
 
-          Join RedLifeSaver, where every click saves a life. Donate blood, share hope, and be a hero today!
-        </h3>
-      </div>
+        <div class="h2" style="font-size: medium;">
+            <h3>Quick links</h3>
+            <a href="#">ABOUT US</a>
+            <a href="#">CHARITY</a>
+            <a href="#">FAQ</a>
+            <a href="#">TERM & CONDITIONS</a>
+        </div>
 
-      <div class="h2">
-        <h3>Quick links</h3>
-        <a href="./aboutUs.php">ABOUT US</a>
-        <a href="#">CHARITY</a>
-        <a href="#">FAQ</a>
-        <a href="#">TERM & CONDITIONS</a>
-      </div>
+        <div class="h3"  style="font-size: medium;">
+            <h3>USEFUL LINKS</h3>
+            <a href="#"><i class="fa-solid fa-location-dot"></i>S.D COLLEGE,SECTOR: 32
+                A,CHANDIGARH</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+91 1234567890</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>redlifesaver@gmail.com</a>
+        </div>
 
-      <div class="h3">
-        <h3>USEFUL LINKS</h3>
-        <a href="#"><i class="fa-solid fa-location-dot"></i>S.D COLLEGE,SECTOR: 32
-          A,CHANDIGARH</a>
-        <a href="#"><i class="fa-solid fa-phone"></i>+91 1234567890</a>
-        <a href="#"><i class="fa-solid fa-envelope"></i>redlifesaver@gmail.com</a>
-      </div>
-
-      <div class="work">
-        <h3>WORK HOURS</h3>
-        <h2>MON - FRI : 9:00 AM - 19:00 PM</h2>
-        <h4>NEED HELP? CONTACT US</h4>
-        <button><i class="fa-solid fa-phone"></i>CONTACT US</button>
-      </div>
+        <div class="work">
+            <h3>WORK HOURS</h3>
+            <h2>MON - FRI : 9:00 AM - 19:00 PM</h2>
+            <h4>NEED HELP? CONTACT US</h4>
+            <button><i class="fa-solid fa-phone"></i>CONTACT US</button>
+        </div>
     </footer>
 
 </body>
